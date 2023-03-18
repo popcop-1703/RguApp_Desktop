@@ -126,7 +126,7 @@ namespace RguApp_Desktop
                 style = 2;
             else
                 MessageBox.Show("Ошибка в получении стиля");
-
+            //
         }
     }
 }
