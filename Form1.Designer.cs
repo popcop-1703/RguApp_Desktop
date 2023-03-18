@@ -49,6 +49,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -135,7 +136,7 @@
             this.listBox1.ItemHeight = 16;
             this.listBox1.Location = new System.Drawing.Point(64, 214);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(132, 164);
+            this.listBox1.Size = new System.Drawing.Size(132, 196);
             this.listBox1.TabIndex = 6;
             // 
             // label1
@@ -249,11 +250,22 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "label7";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(292, 403);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(116, 45);
+            this.button4.TabIndex = 20;
+            this.button4.Text = "Работа с файлом";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1091, 569);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -304,6 +316,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button4;
     }
 }
 

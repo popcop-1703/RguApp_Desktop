@@ -14,13 +14,27 @@ namespace RguApp_Desktop
     {
         public int gender, style,distance = 1;
         public string[] distance_text = { "1 км", "2 км", "3 км", "5 км", "7.5 км", "10 км", "15 км", "20 км", "30 км", "50 км", "70 км" };
-        public double a, b, c, d, speed = 0;
-        public long time;
-        public int point;
+        public double a, b, c, d, speed, Final_count, speed_2 = 0;
+        public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
 
-       
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 newForm2 = new Form2(this);
+            newForm2.Show();
+        }
+
+        public long time;
+        public int point, buttonCount;
+        public double scale = Math.Pow(10, 2);
+
+        public static Form1 SelfRef
+        {
+            get; set;
+        }
+
         public Form1()
         {
+            SelfRef = this;
             InitializeComponent();
             radioButton_male.Checked = true;
             radioButton_StyleFree.Checked = true;  
@@ -36,6 +50,8 @@ namespace RguApp_Desktop
             textBox3.Visible = false;
             textBox4.Visible = false;
             button2.Visible = false;
+            label6.Visible = false;
+            label7.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -46,12 +62,30 @@ namespace RguApp_Desktop
             GetRadio();
             GetDistance();
             GetCoef();
+
             /*MessageBox.Show(Convert.ToString(gender));
             MessageBox.Show(Convert.ToString(style));
-            MessageBox.Show(Convert.ToString(distance));*/
-            MessageBox.Show(Convert.ToString(a));
+            MessageBox.Show(Convert.ToString(distance));
+            MessageBox.Show(Convert.ToString(a));*/
+
             label1.Text = "Введите время";
+            label2.Text = "Часы";
+            label3.Text = "Минуты";
+            label4.Text = "Секунды";
+            label5.Text = "Десятые";
             label1.Visible = true;
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            label5.Visible = true;
+            textBox1.Visible = true;
+            textBox2.Visible = true;
+            textBox3.Visible = true;
+            textBox4.Visible = true;
+            button2.Visible = true;
+
+
+            buttonCount = 1;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -65,18 +99,88 @@ namespace RguApp_Desktop
             label1.Visible = true;
             label2.Visible = true;
             textBox1.Visible = true;
-            button2.Visible=true;
+            button2.Visible = true;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            textBox2.Visible = false;
+            textBox3.Visible = false;
+            textBox4.Visible = false;
 
-            
+            buttonCount = 2;
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            point = int.Parse(textBox1.Text);
-            speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
-            time = (long)(distance / speed);
+            label7.Text = "";
+            point = 0;
+            if(buttonCount == 1)
+            {
+                if(textBox1.Text == "")
+                    Hour_int = 0;
+                else
+                    Hour_int = int.Parse(textBox1.Text);
 
-            label6.Text = "Рекомендованная скорость = " + Math.Round(speed, 2) + " М/С";
-            label7.Text = "Результат = " + timeToString(time);
+                if (textBox2.Text == "")
+                    Minute_int = 0;
+                else
+                    Minute_int = int.Parse(textBox2.Text);
+
+                if (textBox3.Text == "")
+                    Second_int = 0;
+                else
+                    Second_int = int.Parse(textBox3.Text);
+
+                if (textBox4.Text == "")
+                    Millisecond_int = 0;
+                else
+                    Millisecond_int = int.Parse(textBox4.Text);
+
+                Final_count = (Millisecond_int + (Second_int * 1000) + (Minute_int * 60 * 1000) + (Hour_int * 60 * 60 * 1000)) / 1000;
+                speed = distance / Final_count;
+
+                for (int i = 0; i < 2200; i++)
+                {
+                    speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                    if (Math.Floor(speed_2) == Math.Floor(speed))
+                    {
+                        for (double j = 0; j < 1; j += 0.1)
+                        {
+                            speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                            if ((Math.Ceiling(speed_2 * 10) / 10) == (Math.Ceiling(speed * 10) / 10))
+                            {
+                                for (double k = 0; k < 0.1; k += 0.01)
+                                {
+                                    speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                                    if ((Math.Ceiling(speed_2 * scale) / scale) == (Math.Ceiling(speed * scale) / scale))
+                                    {
+                                        point = i;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                label6.Text = "Ваша скорость = " + Math.Round(speed, 2) + " М/С";
+                label7.Text = "Ваше количество очков = " + point;
+            }
+            else if(buttonCount == 2)
+            {
+                if (textBox1.Text == "")
+                    point = 0;
+                else
+                    point = int.Parse(textBox1.Text);
+
+                speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
+                time = (long)(distance / speed);
+
+                label6.Text = "Рекомендованная скорость = " + Math.Round(speed, 2) + " М/С";
+                label7.Text = "Результат = " + timeToString(time);
+            }
+
+            label6.Visible = true;
+            label7.Visible = true;
         }
 
         private static String timeToString(long time)
@@ -152,7 +256,7 @@ namespace RguApp_Desktop
             }
         }
 
-        private void GetCoef()
+        public void GetCoef()
         {
             if (distance == 1000 && gender == 1 && style == 1)
             {
