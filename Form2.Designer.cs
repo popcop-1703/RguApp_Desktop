@@ -31,14 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.обработкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подсчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.обработкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.подсчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.сортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,9 +67,31 @@
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(148, 26);
             this.открытьToolStripMenuItem.Text = "открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.открытьToolStripMenuItem_Click);
+            // 
+            // обработкаToolStripMenuItem
+            // 
+            this.обработкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.подсчетToolStripMenuItem,
+            this.сортировкаToolStripMenuItem});
+            this.обработкаToolStripMenuItem.Name = "обработкаToolStripMenuItem";
+            this.обработкаToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
+            this.обработкаToolStripMenuItem.Text = "Обработка";
+            // 
+            // подсчетToolStripMenuItem
+            // 
+            this.подсчетToolStripMenuItem.Name = "подсчетToolStripMenuItem";
+            this.подсчетToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.подсчетToolStripMenuItem.Text = "Подсчет";
+            this.подсчетToolStripMenuItem.Click += new System.EventHandler(this.подсчетToolStripMenuItem_Click);
+            // 
+            // сортировкаToolStripMenuItem
+            // 
+            this.сортировкаToolStripMenuItem.Name = "сортировкаToolStripMenuItem";
+            this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.сортировкаToolStripMenuItem.Text = "Сортировка";
             // 
             // toolStrip1
             // 
@@ -110,28 +132,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.Filter = "Excel|*xlsx";
-            // 
-            // обработкаToolStripMenuItem
-            // 
-            this.обработкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.подсчетToolStripMenuItem,
-            this.сортировкаToolStripMenuItem});
-            this.обработкаToolStripMenuItem.Name = "обработкаToolStripMenuItem";
-            this.обработкаToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
-            this.обработкаToolStripMenuItem.Text = "Обработка";
-            // 
-            // подсчетToolStripMenuItem
-            // 
-            this.подсчетToolStripMenuItem.Name = "подсчетToolStripMenuItem";
-            this.подсчетToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.подсчетToolStripMenuItem.Text = "Подсчет";
-            this.подсчетToolStripMenuItem.Click += new System.EventHandler(this.подсчетToolStripMenuItem_Click);
-            // 
-            // сортировкаToolStripMenuItem
-            // 
-            this.сортировкаToolStripMenuItem.Name = "сортировкаToolStripMenuItem";
-            this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.сортировкаToolStripMenuItem.Text = "Сортировка";
             // 
             // Form2
             // 
