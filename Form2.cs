@@ -20,8 +20,11 @@ namespace RguApp_Desktop
         private string gender_text, style_text, distance_text = "";
         private int distance, gender, style, point = 0;
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
+        public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
 
-       
+
+
+
 
         public double scale = Math.Pow(10, 2);
 
@@ -93,6 +96,10 @@ namespace RguApp_Desktop
 
         private void подсчетToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            string str = "";
+            string[] arr = str.Split(':');
+            
+
             try
             {
                 gender_text = dataGridView1[0,0].Value.ToString();
@@ -109,31 +116,49 @@ namespace RguApp_Desktop
             distance = Convert.ToInt32(distance_text);
             GetCoef();
 
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            for (int g = 0; g < dataGridView1.Rows.Count - 1; g++)
             {
-                for(int k = 3; k < dataGridView1.Rows[i].Cells.Count - 1; k++)
-                {
-                    //подсчет очков
-                }
-            }
+                str = dataGridView1.Rows[g].Cells[6].ToString();
+                int[] intArray = new int[arr.Length];
 
-            for (int i = 0; i < 2200; i++)
-            {
-                speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
-                if (Math.Floor(speed_2) == Math.Floor(speed))
+                for (int p = 0; p < arr.Length; p ++)
                 {
-                    for (double j = 0; j < 1; j += 0.1)
+                    intArray[g] = Convert.ToInt32(arr[g]);
+                }
+
+                Hour_int = intArray[0];
+                Minute_int = intArray[1];
+                Second_int = intArray[2];
+                Millisecond_int = intArray[3];
+                //расчет скорости 
+                /*
+                 * string str = "01:02:03:04";
+    string[] arr = str.Split(':');
+    int[] intArray = new int[arr.Length];
+    for (int i = 0; i < arr.Length; i++)
+    {
+        intArray[i] = Convert.ToInt32(arr[i]);
+    }*/
+
+                //подсчет очков
+                for (int i = 0; i < 2200; i++)
+                {
+                    speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                    if (Math.Floor(speed_2) == Math.Floor(speed))
                     {
-                        speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
-                        if ((Math.Ceiling(speed_2 * 10) / 10) == (Math.Ceiling(speed * 10) / 10))
+                        for (double j = 0; j < 1; j += 0.1)
                         {
-                            for (double k = 0; k < 0.1; k += 0.01)
+                            speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                            if ((Math.Ceiling(speed_2 * 10) / 10) == (Math.Ceiling(speed * 10) / 10))
                             {
-                                speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
-                                if ((Math.Ceiling(speed_2 * scale) / scale) == (Math.Ceiling(speed * scale) / scale))
+                                for (double k = 0; k < 0.1; k += 0.01)
                                 {
-                                    point = i;
-                                    break;
+                                    speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                                    if ((Math.Ceiling(speed_2 * scale) / scale) == (Math.Ceiling(speed * scale) / scale))
+                                    {
+                                        point = i;
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -141,8 +166,10 @@ namespace RguApp_Desktop
                 }
             }
 
+            dataGridView1.Rows[g].Cells[7].Value = point;
+
         }
-        
+
         private void GetGenderAndStyle()
         {
             if (gender_text == "Мужской" || gender_text == "мужской")
