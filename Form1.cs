@@ -20,6 +20,7 @@ namespace RguApp_Desktop
         private void button4_Click(object sender, EventArgs e)
         {
             Form2 newForm2 = new Form2(this);
+            this.Hide();
             newForm2.Show();
         }
 

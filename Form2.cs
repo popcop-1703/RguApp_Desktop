@@ -8,8 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Excel = Microsoft.Office.Interop.Excel;
 using ExcelDataReader;
+using Microsoft.Office.Interop.Excel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using DataTable = System.Data.DataTable;
 
 namespace RguApp_Desktop
 {
@@ -20,13 +23,10 @@ namespace RguApp_Desktop
         private string gender_text, style_text, distance_text = "";
         private int distance, gender, style, point = 0;
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
+
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
-
-
-
-
-
         public double scale = Math.Pow(10, 2);
+
 
         private DataTableCollection tableCollection = null;
         private Form1 refForm;
@@ -34,6 +34,86 @@ namespace RguApp_Desktop
         {
             InitializeComponent();
             this.refForm = refForm;
+        }
+
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook workbook = excelapp.Workbooks.Add();
+            Microsoft.Office.Interop.Excel.Worksheet worksheet = workbook.ActiveSheet;
+
+            for (int i = 0; i < dataGridView1.RowCount + 1; i++)
+            {
+                for (int j = 1; j < dataGridView1.ColumnCount + 1; j++)
+                {
+                    if (i == 0)
+                    {
+                        worksheet.Rows[i + 1].Columns[j] = dataGridView1.Columns[j - 1].HeaderText;
+                    }
+                    else
+                        worksheet.Rows[i + 1].Columns[j] = dataGridView1.Rows[i - 1].Cells[j - 1].Value;
+                }
+            }
+
+            excelapp.AlertBeforeOverwriting = false;
+            SaveFileDialog sfd = new SaveFileDialog()
+            {
+                Filter = "MS Excel dosuments (*.xlsx)|*.xlsx",
+                DefaultExt = "*.xlsx",
+                FileName = "1",
+                Title = "Укажите директорию и имя файла для сохранения"
+            };
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                workbook.SaveAs(sfd.FileName);
+            }
+            excelapp.Quit();
+            MessageBox.Show("Ёпть!");
+        }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string fileName = "D:\\fortest\\test.xlsx";
+
+            try
+            {
+                var excel = new Excel.Application();
+
+                var workBooks = excel.Workbooks;
+                var workBook = workBooks.Add();
+                var workSheet = (Excel.Worksheet)excel.ActiveSheet;
+
+                workSheet.Cells[1, "A"] = "Пол";
+                workSheet.Cells[1, "B"] = "Стиль";
+                workSheet.Cells[1, "C"] = "Дистанция";
+                workSheet.Cells[1, "D"] = "№";
+                workSheet.Cells[1, "E"] = "Место";
+                workSheet.Cells[1, "F"] = "Фамилия Имя";
+                workSheet.Cells[1, "G"] = "Результат";
+                workSheet.Cells[1, "H"] = "Очки";
+
+                //workBook.SaveAs(fileName);
+                SaveFileDialog sfd = new SaveFileDialog()
+                {
+                    Filter = "MS Excel dosuments (*.xlsx)|*.xlsx",
+                    DefaultExt = "*.xlsx",
+                    FileName = "1",
+                    Title = "Укажите директорию и имя файла для сохранения"
+                };
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    workBook.SaveAs(sfd.FileName);
+                }
+                workBook.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка: " + ex.ToString());
+            }
+
+            MessageBox.Show("Файл " + "записан успешно!");
+
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -97,49 +177,43 @@ namespace RguApp_Desktop
         private void подсчетToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string str = "";
-            string[] arr = str.Split(':');
-            
 
             try
             {
                 gender_text = dataGridView1[0,0].Value.ToString();
                 style_text = dataGridView1[1,0].Value.ToString();
                 distance_text = dataGridView1[2, 0].Value.ToString();
+                distance = Convert.ToInt32(distance_text);
                 //MessageBox.Show(gender);
                 GetGenderAndStyle();
             }
             catch
             {
-                MessageBox.Show("Ошибка");
+                MessageBox.Show("Ошибка в получение базовых значений");
             }
             
-            distance = Convert.ToInt32(distance_text);
             GetCoef();
 
             for (int g = 0; g < dataGridView1.Rows.Count - 1; g++)
             {
-                str = dataGridView1.Rows[g].Cells[6].ToString();
+                speed = 0;
+                str = dataGridView1[6, g].Value.ToString();
+                string[] arr = str.Split(':');
                 int[] intArray = new int[arr.Length];
 
                 for (int p = 0; p < arr.Length; p ++)
                 {
-                    intArray[g] = Convert.ToInt32(arr[g]);
+                    intArray[p] = Convert.ToInt32(arr[p]);
                 }
 
                 Hour_int = intArray[0];
                 Minute_int = intArray[1];
                 Second_int = intArray[2];
                 Millisecond_int = intArray[3];
-                //расчет скорости 
-                /*
-                 * string str = "01:02:03:04";
-    string[] arr = str.Split(':');
-    int[] intArray = new int[arr.Length];
-    for (int i = 0; i < arr.Length; i++)
-    {
-        intArray[i] = Convert.ToInt32(arr[i]);
-    }*/
 
+                Final_count = (Millisecond_int + (Second_int * 1000) + (Minute_int * 60 * 1000) + (Hour_int * 60 * 60 * 1000)) / 1000;
+                speed = distance / Final_count;
+                //расчет скорости 
                 //подсчет очков
                 for (int i = 0; i < 2200; i++)
                 {
@@ -164,10 +238,9 @@ namespace RguApp_Desktop
                         }
                     }
                 }
+                dataGridView1.Rows[g].Cells[7].Value = point;
+                point = 0;
             }
-
-            dataGridView1.Rows[g].Cells[7].Value = point;
-
         }
 
         private void GetGenderAndStyle()
