@@ -14,6 +14,7 @@ using Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using DataTable = System.Data.DataTable;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using System.Data.Common;
 
 namespace RguApp_Desktop
 {
@@ -30,30 +31,92 @@ namespace RguApp_Desktop
 
         private void данныеПоОчкамToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int o = 1;
             point = 1;
             gender = 1;
             style = 1;
             distance = 1000;
             GetCoef();
+            //dataGridView1.Columns.Add("point2", "Очки");
+            //dataGridView1.Columns.Add("time2", "Время");
             dataGridView1.Columns.Add("time", "Время");
-            dataGridView1.Columns.Add("point2", "Очки");
+            dataGridView1.Columns.Add("dist1000", "1000");
+            dataGridView1.Columns.Add("dist1000", "2000");
+            dataGridView1.Columns.Add("dist1000", "3000");
+            dataGridView1.Columns.Add("dist1000", "5000");
+            dataGridView1.Columns.Add("dist1000", "7500");
+            dataGridView1.Columns.Add("dist1000", "10000");
+            dataGridView1.Columns.Add("dist1000", "15000");
+            dataGridView1.Columns.Add("dist1000", "20000");
+            dataGridView1.Columns.Add("dist1000", "30000");
+            dataGridView1.Columns.Add("dist1000", "50000");
+            dataGridView1.Columns.Add("dist1000", "70000");
 
+            /*dataGridView1.Rows[0].Cells[1].Value = 1000;
+            dataGridView1.Rows[0].Cells[2].Value = 2000;
+            dataGridView1.Rows[0].Cells[3].Value = 3000;
+            dataGridView1.Rows[0].Cells[4].Value = 5000;
+            dataGridView1.Rows[0].Cells[5].Value = 7500;
+            dataGridView1.Rows[0].Cells[6].Value = 10000;
+            dataGridView1.Rows[0].Cells[7].Value = 15000;
+            dataGridView1.Rows[0].Cells[8].Value = 20000;
+            dataGridView1.Rows[0].Cells[9].Value = 30000;
+            dataGridView1.Rows[0].Cells[10].Value = 50000;
+            dataGridView1.Rows[0].Cells[11].Value = 70000;*/
 
-            while (point <= 2200)
+            while (point <= 1900)
             {
-
+                o = 1;
                 dataGridView1.Rows.Add();
-
                 speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
-                time = (double)(distance / speed);
-                    
-                dataGridView1.Rows[point-1].Cells[0].Value = point;
-                dataGridView1.Rows[point - 1].Cells[1].Value = timeToString(time);
 
+                while (o <= 11)
+                {
+                    string headerText = dataGridView1.Columns[o].HeaderText;
+                    
+                    time = (double)(Convert.ToInt32(headerText) / speed);
+                    dataGridView1.Rows[point - 1].Cells[o].Value = timeToString(time);
+                    o++;
+                }
+
+                dataGridView1.Rows[point - 1].Cells[0].Value = point;
+                o++;
                 point++;
+
             }
             
             //dataGridView1.Rows[0].Cells[1].Value = point;
+        }
+
+        private void пАМToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            dataGridView1.Columns.Add("time", "Время");
+            dataGridView1.Columns.Add("dist1000", "1000");
+            dataGridView1.Columns.Add("dist1000", "2000");
+            dataGridView1.Columns.Add("dist1000", "3000");
+            dataGridView1.Columns.Add("dist1000", "5000");
+            dataGridView1.Columns.Add("dist1000", "7500");
+            dataGridView1.Columns.Add("dist1000", "10000");
+            dataGridView1.Columns.Add("dist1000", "15000");
+            dataGridView1.Columns.Add("dist1000", "20000");
+            dataGridView1.Columns.Add("dist1000", "30000");
+            dataGridView1.Columns.Add("dist1000", "50000");
+            dataGridView1.Columns.Add("dist1000", "70000");
+            dataGridView1.Rows[0].Cells[1].Value = 1000;
+            dataGridView1.Rows[0].Cells[2].Value = 2000;
+            dataGridView1.Rows[0].Cells[3].Value = 3000;
+            dataGridView1.Rows[0].Cells[4].Value = 5000;
+            dataGridView1.Rows[0].Cells[5].Value = 7500;
+            dataGridView1.Rows[0].Cells[6].Value = 10000;
+            dataGridView1.Rows[0].Cells[7].Value = 15000;
+            dataGridView1.Rows[0].Cells[8].Value = 20000;
+            dataGridView1.Rows[0].Cells[9].Value = 30000;
+            dataGridView1.Rows[0].Cells[10].Value = 50000;
+            dataGridView1.Rows[0].Cells[11].Value = 70000;
+
+            //dataGridView1.Rows.Add();
+
         }
 
         private static String timeToString(double time)

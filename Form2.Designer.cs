@@ -43,6 +43,7 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.допТаблицаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.данныеПоОчкамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.пАМToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -159,7 +160,8 @@
             // допТаблицаToolStripMenuItem
             // 
             this.допТаблицаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.данныеПоОчкамToolStripMenuItem});
+            this.данныеПоОчкамToolStripMenuItem,
+            this.пАМToolStripMenuItem});
             this.допТаблицаToolStripMenuItem.Name = "допТаблицаToolStripMenuItem";
             this.допТаблицаToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
             this.допТаблицаToolStripMenuItem.Text = "доп таблица ";
@@ -170,6 +172,13 @@
             this.данныеПоОчкамToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.данныеПоОчкамToolStripMenuItem.Text = "Данные по очкам";
             this.данныеПоОчкамToolStripMenuItem.Click += new System.EventHandler(this.данныеПоОчкамToolStripMenuItem_Click);
+            // 
+            // пАМToolStripMenuItem
+            // 
+            this.пАМToolStripMenuItem.Name = "пАМToolStripMenuItem";
+            this.пАМToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.пАМToolStripMenuItem.Text = "ПАМ";
+            this.пАМToolStripMenuItem.Click += new System.EventHandler(this.пАМToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -209,5 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem допТаблицаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem данныеПоОчкамToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem пАМToolStripMenuItem;
     }
 }
