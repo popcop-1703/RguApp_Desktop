@@ -41,7 +41,8 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.данныеПоКаждомуОчкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.допТаблицаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.данныеПоОчкамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -52,7 +53,8 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.обработкаToolStripMenuItem});
+            this.обработкаToolStripMenuItem,
+            this.допТаблицаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
@@ -95,8 +97,7 @@
             // обработкаToolStripMenuItem
             // 
             this.обработкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.подсчетToolStripMenuItem,
-            this.данныеПоКаждомуОчкуToolStripMenuItem});
+            this.подсчетToolStripMenuItem});
             this.обработкаToolStripMenuItem.Name = "обработкаToolStripMenuItem";
             this.обработкаToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.обработкаToolStripMenuItem.Text = "Обработка";
@@ -155,12 +156,20 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
-            // данныеПоКаждомуОчкуToolStripMenuItem
+            // допТаблицаToolStripMenuItem
             // 
-            this.данныеПоКаждомуОчкуToolStripMenuItem.Name = "данныеПоКаждомуОчкуToolStripMenuItem";
-            this.данныеПоКаждомуОчкуToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
-            this.данныеПоКаждомуОчкуToolStripMenuItem.Text = "Данные по каждому очку ";
-            this.данныеПоКаждомуОчкуToolStripMenuItem.Click += new System.EventHandler(this.данныеПоКаждомуОчкуToolStripMenuItem_Click);
+            this.допТаблицаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.данныеПоОчкамToolStripMenuItem});
+            this.допТаблицаToolStripMenuItem.Name = "допТаблицаToolStripMenuItem";
+            this.допТаблицаToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.допТаблицаToolStripMenuItem.Text = "доп таблица ";
+            // 
+            // данныеПоОчкамToolStripMenuItem
+            // 
+            this.данныеПоОчкамToolStripMenuItem.Name = "данныеПоОчкамToolStripMenuItem";
+            this.данныеПоОчкамToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.данныеПоОчкамToolStripMenuItem.Text = "Данные по очкам";
+            this.данныеПоОчкамToolStripMenuItem.Click += new System.EventHandler(this.данныеПоОчкамToolStripMenuItem_Click);
             // 
             // Form2
             // 
@@ -198,6 +207,7 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem данныеПоКаждомуОчкуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem допТаблицаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem данныеПоОчкамToolStripMenuItem;
     }
 }

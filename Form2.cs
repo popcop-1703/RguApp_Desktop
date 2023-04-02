@@ -13,6 +13,7 @@ using ExcelDataReader;
 using Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using DataTable = System.Data.DataTable;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace RguApp_Desktop
 {
@@ -24,11 +25,46 @@ namespace RguApp_Desktop
         private int distance, gender, style, point = 0;
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
 
+        public double time;
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
 
-        private void данныеПоКаждомуОчкуToolStripMenuItem_Click(object sender, EventArgs e)
+        private void данныеПоОчкамToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            point = 1;
+            gender = 1;
+            style = 1;
+            distance = 1000;
+            GetCoef();
+            dataGridView1.Columns.Add("time", "Время");
+            dataGridView1.Columns.Add("point2", "Очки");
 
+
+            while (point <= 2200)
+            {
+
+                dataGridView1.Rows.Add();
+
+                speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
+                time = (double)(distance / speed);
+                    
+                dataGridView1.Rows[point-1].Cells[0].Value = point;
+                dataGridView1.Rows[point - 1].Cells[1].Value = timeToString(time);
+
+                point++;
+            }
+            
+            //dataGridView1.Rows[0].Cells[1].Value = point;
+        }
+
+        private static String timeToString(double time)
+        {
+            double hour = Math.Floor(time / 3600),
+                    min = Math.Floor(time / 60 % 60),
+                    sec = Math.Floor(time / 1 % 60),
+                    mil = Math.Round(time%60 - Math.Floor(time%60),3);
+            //mil = time /
+            //return String.Format("%02d:%02d:%02d", hour, min, sec);
+            return hour + ":" + min + ":" + sec + ":" + mil;
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)

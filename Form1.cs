@@ -190,6 +190,7 @@ namespace RguApp_Desktop
             long hour = time / 3600,
                     min = time / 60 % 60,
                     sec = time / 1 % 60;
+                    //mil = time /
             //return String.Format("%02d:%02d:%02d", hour, min, sec);
             return hour + ":" + min + ":" + sec;
         }
