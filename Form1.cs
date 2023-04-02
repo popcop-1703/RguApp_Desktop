@@ -20,8 +20,8 @@ namespace RguApp_Desktop
         private void button4_Click(object sender, EventArgs e)
         {
             Form2 newForm2 = new Form2(this);
-            this.Hide();
-            newForm2.Show();
+            //this.Hide();
+            newForm2.ShowDialog();
         }
 
         public long time;
@@ -165,6 +165,7 @@ namespace RguApp_Desktop
 
                 label6.Text = "Ваша скорость = " + Math.Round(speed, 2) + " М/С";
                 label7.Text = "Ваше количество очков = " + point;
+
             }
             else if(buttonCount == 2)
             {

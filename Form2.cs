@@ -25,6 +25,12 @@ namespace RguApp_Desktop
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
 
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public double scale = Math.Pow(10, 2);
 
 
@@ -69,13 +75,11 @@ namespace RguApp_Desktop
                 workbook.SaveAs(sfd.FileName);
             }
             excelapp.Quit();
-            MessageBox.Show("Ёпть!");
+            MessageBox.Show("Готово!");
         }
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string fileName = "D:\\fortest\\test.xlsx";
-
             try
             {
                 var excel = new Excel.Application();
@@ -198,18 +202,36 @@ namespace RguApp_Desktop
             {
                 speed = 0;
                 str = dataGridView1[6, g].Value.ToString();
-                string[] arr = str.Split(':');
+                string[] arr = str.Split(':', ',', '.');
                 int[] intArray = new int[arr.Length];
 
                 for (int p = 0; p < arr.Length; p ++)
                 {
                     intArray[p] = Convert.ToInt32(arr[p]);
                 }
+                if(arr.Length == 4)
+                {
+                    Hour_int = intArray[0];
+                    Minute_int = intArray[1];
+                    Second_int = intArray[2];
+                    Millisecond_int = intArray[3];
+                }
+                else if (arr.Length == 3)
+                {
+                    Minute_int = intArray[0];
+                    Second_int = intArray[1];
+                    Millisecond_int = intArray[2];
+                }
+                else if (arr.Length == 2)
+                {
+                    Second_int = intArray[0];
+                    Millisecond_int = intArray[1];
+                }
+                else if (arr.Length == 1)
+                {
+                    Millisecond_int = intArray[0];
+                }
 
-                Hour_int = intArray[0];
-                Minute_int = intArray[1];
-                Second_int = intArray[2];
-                Millisecond_int = intArray[3];
 
                 Final_count = (Millisecond_int + (Second_int * 1000) + (Minute_int * 60 * 1000) + (Hour_int * 60 * 60 * 1000)) / 1000;
                 speed = distance / Final_count;
@@ -240,6 +262,10 @@ namespace RguApp_Desktop
                 }
                 dataGridView1.Rows[g].Cells[7].Value = point;
                 point = 0;
+                intArray[0] = 0;
+                intArray[1] = 0;
+                intArray[2] = 0;
+                intArray[3] = 0;
             }
         }
 
