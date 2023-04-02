@@ -26,6 +26,11 @@ namespace RguApp_Desktop
 
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
 
+        private void данныеПоКаждомуОчкуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -41,6 +41,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.данныеПоКаждомуОчкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -94,7 +95,8 @@
             // обработкаToolStripMenuItem
             // 
             this.обработкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.подсчетToolStripMenuItem});
+            this.подсчетToolStripMenuItem,
+            this.данныеПоКаждомуОчкуToolStripMenuItem});
             this.обработкаToolStripMenuItem.Name = "обработкаToolStripMenuItem";
             this.обработкаToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
             this.обработкаToolStripMenuItem.Text = "Обработка";
@@ -153,6 +155,13 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
+            // данныеПоКаждомуОчкуToolStripMenuItem
+            // 
+            this.данныеПоКаждомуОчкуToolStripMenuItem.Name = "данныеПоКаждомуОчкуToolStripMenuItem";
+            this.данныеПоКаждомуОчкуToolStripMenuItem.Size = new System.Drawing.Size(273, 26);
+            this.данныеПоКаждомуОчкуToolStripMenuItem.Text = "Данные по каждому очку ";
+            this.данныеПоКаждомуОчкуToolStripMenuItem.Click += new System.EventHandler(this.данныеПоКаждомуОчкуToolStripMenuItem_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -189,5 +198,6 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem данныеПоКаждомуОчкуToolStripMenuItem;
     }
 }
