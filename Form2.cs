@@ -15,28 +15,45 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using DataTable = System.Data.DataTable;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.Data.Common;
+using System.Security.Cryptography;
 
 namespace RguApp_Desktop
 {
     public partial class Form2 : Form
     {
-
+        
         private string fileName = string.Empty;
         private string gender_text, style_text, distance_text = "";
-        private int distance, gender, style, point = 0;
+        private int distance, gender, style, point, table_add = 0;
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
 
         public double time;
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
-
+        //Form1 frm = (Form1)this.Owner;
+        //FromB
+        public Form2()
+        {
+            InitializeComponent();
+            //this.refForm = refForm;
+            Form1 frm = (Form1)this.Owner;
+            if(DataBase.transition == 1)
+            {
+                construct_table();
+            }
+        }
         private void данныеПоОчкамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            construct_table();
+            
+        }
+
+        private void construct_table()
         {
             int o = 1;
             point = 1;
-            gender = 1;
-            style = 1;
-            distance = 1000;
-            GetCoef();
+            gender = DataBase.gender;
+            style = DataBase.style;
+            //distance = 1000;
             //dataGridView1.Columns.Add("point2", "Очки");
             //dataGridView1.Columns.Add("time2", "Время");
             dataGridView1.Columns.Add("time", "Время");
@@ -63,17 +80,17 @@ namespace RguApp_Desktop
             dataGridView1.Rows[0].Cells[9].Value = 30000;
             dataGridView1.Rows[0].Cells[10].Value = 50000;
             dataGridView1.Rows[0].Cells[11].Value = 70000;*/
-
-            while (point <= 1900)
+            //GetCoef();
+            while (point <= 20)
             {
                 o = 1;
                 dataGridView1.Rows.Add();
-                speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
-
                 while (o <= 11)
                 {
                     string headerText = dataGridView1.Columns[o].HeaderText;
-                    
+                    distance = Convert.ToInt32(headerText);
+                    GetCoef();
+                    speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
                     time = (double)(Convert.ToInt32(headerText) / speed);
                     dataGridView1.Rows[point - 1].Cells[o].Value = timeToString(time);
                     o++;
@@ -82,11 +99,12 @@ namespace RguApp_Desktop
                 dataGridView1.Rows[point - 1].Cells[0].Value = point;
                 o++;
                 point++;
-
             }
-            
+
             //dataGridView1.Rows[0].Cells[1].Value = point;
         }
+
+        
 
         private void пАМToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -116,7 +134,6 @@ namespace RguApp_Desktop
             dataGridView1.Rows[0].Cells[11].Value = 70000;
 
             //dataGridView1.Rows.Add();
-
         }
 
         private static String timeToString(double time)
@@ -124,10 +141,11 @@ namespace RguApp_Desktop
             double hour = Math.Floor(time / 3600),
                     min = Math.Floor(time / 60 % 60),
                     sec = Math.Floor(time / 1 % 60),
-                    mil = Math.Round(time%60 - Math.Floor(time%60),3);
+                    mil = Math.Round(time % 60 - Math.Floor(time % 60), 3),
+                    sec2 = sec + mil;
             //mil = time /
             //return String.Format("%02d:%02d:%02d", hour, min, sec);
-            return hour + ":" + min + ":" + sec + ":" + mil;
+            return hour + ":" + min + ":" + sec2;
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,12 +157,9 @@ namespace RguApp_Desktop
 
 
         private DataTableCollection tableCollection = null;
-        private Form1 refForm;
-        public Form2(Form1 refForm)
-        {
-            InitializeComponent();
-            this.refForm = refForm;
-        }
+        //private Form1 refForm;
+        
+
 
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -221,7 +236,7 @@ namespace RguApp_Desktop
             }
 
             MessageBox.Show("Файл " + "записан успешно!");
-
+            table_add = 1;
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -247,6 +262,29 @@ namespace RguApp_Desktop
             {
                 MessageBox.Show(ex.Message, "Ошибика", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
+        }
+
+        private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            if(table_add == 1)
+            {
+                add_combobox();
+            }
+            else
+            {
+
+            }
+        }
+
+        private void add_combobox()
+        {
+            dataGridView1.Rows.Add();
+            DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dataGridView1.Rows[0].Cells[0];
+            comboCell.Items.Add("1 - Первый");
+            comboCell.Items.Add("2 - Второй");
+            comboCell.Items.Add("3 - Третий");
+            comboCell.Items.Add("4 - Четвёртый");
         }
 
         private void OpenExcelFile(string path)
@@ -273,6 +311,7 @@ namespace RguApp_Desktop
             }
 
             toolStripComboBox1.SelectedIndex = 0;
+
         }
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -376,16 +415,28 @@ namespace RguApp_Desktop
         private void GetGenderAndStyle()
         {
             if (gender_text == "Мужской" || gender_text == "мужской")
+            {
                 gender = 1;
+                DataBase.gender = 1;
+            }
             else if (gender_text == "Женский" || gender_text == "женский")
+            {
                 gender = 2;
+                DataBase.gender = 2;
+            }
             else
                 MessageBox.Show("Ошибка в получении пола");
 
             if (style_text == "Свободный" || style_text == "свободный")
+            {
+                DataBase.style = 1;
                 style = 1;
+            }
             else if (style_text == "Классический" || style_text == "классический")
+            {
                 style = 2;
+                DataBase.style = 2;
+            }
             else
                 MessageBox.Show("Ошибка в получении стиля");
             

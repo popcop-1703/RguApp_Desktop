@@ -16,15 +16,25 @@ namespace RguApp_Desktop
         public string[] distance_text = { "1 км", "2 км", "3 км", "5 км", "7.5 км", "10 км", "15 км", "20 км", "30 км", "50 км", "70 км" };
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
+        Form2 newForm2 = new Form2();
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form2 newForm2 = new Form2(this);
-            //this.Hide();
+            DataBase.transition = 0;
+            GetRadio();
+            newForm2.Owner = this;
             newForm2.ShowDialog();
         }
 
         public long time;
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            GetRadio();
+            DataBase.transition = 1;
+            newForm2.ShowDialog();
+        }
+
         public int point, buttonCount;
         public double scale = Math.Pow(10, 2);
 
@@ -195,24 +205,28 @@ namespace RguApp_Desktop
             return hour + ":" + min + ":" + sec;
         }
 
-        private void GetRadio()
+        public void GetRadio()
         {
             if (radioButton_male.Checked)
             {
                 gender = 1;
+                DataBase.gender = 1;
             }
             else if (radioButton_female.Checked)
             {
                 gender = 2;
+                DataBase.gender = 2;
             };
 
             if (radioButton_StyleFree.Checked)
             {
                 style = 1;
+                DataBase.style = 1;
             }
             else if (radioButton_StyleClassic.Checked)
             {
                 style = 2;
+                DataBase.style = 2;
             }
         }
 
