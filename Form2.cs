@@ -1,27 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Excel = Microsoft.Office.Interop.Excel;
-using ExcelDataReader;
+﻿using ExcelDataReader;
 using Microsoft.Office.Interop.Excel;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 using DataTable = System.Data.DataTable;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using System.Data.Common;
-using System.Security.Cryptography;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace RguApp_Desktop
 {
     public partial class Form2 : Form
     {
-        
+
         private string fileName = string.Empty;
         private string gender_text, style_text, distance_text = "";
         private int distance, gender, style, point, table_add = 0;
@@ -29,33 +19,68 @@ namespace RguApp_Desktop
 
         public double time;
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
-        //Form1 frm = (Form1)this.Owner;
-        //FromB
         public Form2()
         {
             InitializeComponent();
-            //this.refForm = refForm;
             Form1 frm = (Form1)this.Owner;
-            if(DataBase.transition == 1)
+        }
+
+        private void данныеПоОчкамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            construct_table();
+        }
+
+
+        DataGridViewComboBoxCell comboBoxCell1 = new DataGridViewComboBoxCell();
+        DataGridViewComboBoxCell comboBoxCell2 = new DataGridViewComboBoxCell();
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            clear_data();
+            if (DataBase.transition == 1)
             {
                 construct_table();
             }
         }
-        private void данныеПоОчкамToolStripMenuItem_Click(object sender, EventArgs e)
+
+        DataGridViewComboBoxCell comboBoxCell3 = new DataGridViewComboBoxCell();
+        private void add_combobox()
         {
-            construct_table();
-            
+            dataGridView1.Columns.Add("time", "Время");
+
+            comboBoxCell1.Items.Add("Мужской");
+            comboBoxCell1.Items.Add("Женский");
+            comboBoxCell2.Items.Add("Свободный");
+            comboBoxCell2.Items.Add("Классический");
+            comboBoxCell3.Items.Add("1000");
+            comboBoxCell3.Items.Add("2000");
+            comboBoxCell3.Items.Add("3000");
+            comboBoxCell3.Items.Add("5000");
+            comboBoxCell3.Items.Add("7500");
+            comboBoxCell3.Items.Add("10000");
+            comboBoxCell3.Items.Add("15000");
+            comboBoxCell3.Items.Add("20000");
+            comboBoxCell3.Items.Add("30000");
+            comboBoxCell3.Items.Add("50000");
+            comboBoxCell3.Items.Add("70000");
+            comboBoxCell1.Value = "Мужской";
+            comboBoxCell2.Value = "Свободный";
+            comboBoxCell3.Value = "1000";
+            dataGridView1.Rows[0].Cells[0] = comboBoxCell1;
+            dataGridView1.Rows[0].Cells[1] = comboBoxCell2;
+            dataGridView1.Rows[0].Cells[2] = comboBoxCell3;
+
         }
+
 
         private void construct_table()
         {
+            clear_data();
             int o = 1;
             point = 1;
             gender = DataBase.gender;
             style = DataBase.style;
-            //distance = 1000;
-            //dataGridView1.Columns.Add("point2", "Очки");
-            //dataGridView1.Columns.Add("time2", "Время");
+
             dataGridView1.Columns.Add("time", "Время");
             dataGridView1.Columns.Add("dist1000", "1000");
             dataGridView1.Columns.Add("dist1000", "2000");
@@ -69,19 +94,7 @@ namespace RguApp_Desktop
             dataGridView1.Columns.Add("dist1000", "50000");
             dataGridView1.Columns.Add("dist1000", "70000");
 
-            /*dataGridView1.Rows[0].Cells[1].Value = 1000;
-            dataGridView1.Rows[0].Cells[2].Value = 2000;
-            dataGridView1.Rows[0].Cells[3].Value = 3000;
-            dataGridView1.Rows[0].Cells[4].Value = 5000;
-            dataGridView1.Rows[0].Cells[5].Value = 7500;
-            dataGridView1.Rows[0].Cells[6].Value = 10000;
-            dataGridView1.Rows[0].Cells[7].Value = 15000;
-            dataGridView1.Rows[0].Cells[8].Value = 20000;
-            dataGridView1.Rows[0].Cells[9].Value = 30000;
-            dataGridView1.Rows[0].Cells[10].Value = 50000;
-            dataGridView1.Rows[0].Cells[11].Value = 70000;*/
-            //GetCoef();
-            while (point <= 20)
+            while (point <= 1900)
             {
                 o = 1;
                 dataGridView1.Rows.Add();
@@ -100,41 +113,8 @@ namespace RguApp_Desktop
                 o++;
                 point++;
             }
-
-            //dataGridView1.Rows[0].Cells[1].Value = point;
         }
 
-        
-
-        private void пАМToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-            dataGridView1.Columns.Add("time", "Время");
-            dataGridView1.Columns.Add("dist1000", "1000");
-            dataGridView1.Columns.Add("dist1000", "2000");
-            dataGridView1.Columns.Add("dist1000", "3000");
-            dataGridView1.Columns.Add("dist1000", "5000");
-            dataGridView1.Columns.Add("dist1000", "7500");
-            dataGridView1.Columns.Add("dist1000", "10000");
-            dataGridView1.Columns.Add("dist1000", "15000");
-            dataGridView1.Columns.Add("dist1000", "20000");
-            dataGridView1.Columns.Add("dist1000", "30000");
-            dataGridView1.Columns.Add("dist1000", "50000");
-            dataGridView1.Columns.Add("dist1000", "70000");
-            dataGridView1.Rows[0].Cells[1].Value = 1000;
-            dataGridView1.Rows[0].Cells[2].Value = 2000;
-            dataGridView1.Rows[0].Cells[3].Value = 3000;
-            dataGridView1.Rows[0].Cells[4].Value = 5000;
-            dataGridView1.Rows[0].Cells[5].Value = 7500;
-            dataGridView1.Rows[0].Cells[6].Value = 10000;
-            dataGridView1.Rows[0].Cells[7].Value = 15000;
-            dataGridView1.Rows[0].Cells[8].Value = 20000;
-            dataGridView1.Rows[0].Cells[9].Value = 30000;
-            dataGridView1.Rows[0].Cells[10].Value = 50000;
-            dataGridView1.Rows[0].Cells[11].Value = 70000;
-
-            //dataGridView1.Rows.Add();
-        }
 
         private static String timeToString(double time)
         {
@@ -143,9 +123,7 @@ namespace RguApp_Desktop
                     sec = Math.Floor(time / 1 % 60),
                     mil = Math.Round(time % 60 - Math.Floor(time % 60), 3),
                     sec2 = sec + mil;
-            //mil = time /
-            //return String.Format("%02d:%02d:%02d", hour, min, sec);
-            return hour + ":" + min + ":" + sec2;
+            return hour.ToString("00") + ":" + min.ToString("00") + ":" + sec2.ToString("00.00");
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,16 +135,13 @@ namespace RguApp_Desktop
 
 
         private DataTableCollection tableCollection = null;
-        //private Form1 refForm;
-        
-
 
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Microsoft.Office.Interop.Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
-            Microsoft.Office.Interop.Excel.Workbook workbook = excelapp.Workbooks.Add();
-            Microsoft.Office.Interop.Excel.Worksheet worksheet = workbook.ActiveSheet;
+            Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
+            Workbook workbook = excelapp.Workbooks.Add();
+            Worksheet worksheet = workbook.ActiveSheet;
 
             for (int i = 0; i < dataGridView1.RowCount + 1; i++)
             {
@@ -216,7 +191,6 @@ namespace RguApp_Desktop
                 workSheet.Cells[1, "G"] = "Результат";
                 workSheet.Cells[1, "H"] = "Очки";
 
-                //workBook.SaveAs(fileName);
                 SaveFileDialog sfd = new SaveFileDialog()
                 {
                     Filter = "MS Excel dosuments (*.xlsx)|*.xlsx",
@@ -238,9 +212,14 @@ namespace RguApp_Desktop
             MessageBox.Show("Файл " + "записан успешно!");
             table_add = 1;
         }
+        private void clear_data()
+        {
+            dataGridView1.Columns.Clear();
+        }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             try
             {
                 DialogResult res = openFileDialog1.ShowDialog();
@@ -262,30 +241,10 @@ namespace RguApp_Desktop
             {
                 MessageBox.Show(ex.Message, "Ошибика", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+            table_add = 1;
+            add_combobox();
         }
 
-        private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
-        {
-            if(table_add == 1)
-            {
-                add_combobox();
-            }
-            else
-            {
-
-            }
-        }
-
-        private void add_combobox()
-        {
-            dataGridView1.Rows.Add();
-            DataGridViewComboBoxCell comboCell = (DataGridViewComboBoxCell)dataGridView1.Rows[0].Cells[0];
-            comboCell.Items.Add("1 - Первый");
-            comboCell.Items.Add("2 - Второй");
-            comboCell.Items.Add("3 - Третий");
-            comboCell.Items.Add("4 - Четвёртый");
-        }
 
         private void OpenExcelFile(string path)
         {
@@ -303,11 +262,11 @@ namespace RguApp_Desktop
 
             tableCollection = db.Tables;
 
-            toolStripComboBox1.Items.Clear();  
+            toolStripComboBox1.Items.Clear();
 
-            foreach(DataTable tabe in tableCollection)
+            foreach (DataTable tabe in tableCollection)
             {
-                 toolStripComboBox1.Items.Add(tabe.TableName);
+                toolStripComboBox1.Items.Add(tabe.TableName);
             }
 
             toolStripComboBox1.SelectedIndex = 0;
@@ -321,24 +280,25 @@ namespace RguApp_Desktop
             dataGridView1.DataSource = table;
         }
 
+
         private void подсчетToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string str = "";
 
             try
             {
-                gender_text = dataGridView1[0,0].Value.ToString();
-                style_text = dataGridView1[1,0].Value.ToString();
-                distance_text = dataGridView1[2, 0].Value.ToString();
-                distance = Convert.ToInt32(distance_text);
-                //MessageBox.Show(gender);
+                gender_text = comboBoxCell1.Value.ToString();
+                style_text = comboBoxCell2.Value.ToString();
+                distance = Convert.ToInt32(comboBoxCell3.Value.ToString());
+
                 GetGenderAndStyle();
+                MessageBox.Show(Convert.ToString(gender));
             }
             catch
             {
                 MessageBox.Show("Ошибка в получение базовых значений");
             }
-            
+
             GetCoef();
 
             for (int g = 0; g < dataGridView1.Rows.Count - 1; g++)
@@ -348,11 +308,11 @@ namespace RguApp_Desktop
                 string[] arr = str.Split(':', ',', '.');
                 int[] intArray = new int[arr.Length];
 
-                for (int p = 0; p < arr.Length; p ++)
+                for (int p = 0; p < arr.Length; p++)
                 {
                     intArray[p] = Convert.ToInt32(arr[p]);
                 }
-                if(arr.Length == 4)
+                if (arr.Length == 4)
                 {
                     Hour_int = intArray[0];
                     Minute_int = intArray[1];
@@ -439,7 +399,7 @@ namespace RguApp_Desktop
             }
             else
                 MessageBox.Show("Ошибка в получении стиля");
-            
+
         }
 
 

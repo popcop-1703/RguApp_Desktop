@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RguApp_Desktop
 {
     public partial class Form1 : Form
     {
-        public int gender, style,distance = 1;
+        public int gender, style, distance = 1;
         public string[] distance_text = { "1 км", "2 км", "3 км", "5 км", "7.5 км", "10 км", "15 км", "20 км", "30 км", "50 км", "70 км" };
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
@@ -26,7 +19,7 @@ namespace RguApp_Desktop
             newForm2.ShowDialog();
         }
 
-        public long time;
+        public double time;
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -48,9 +41,9 @@ namespace RguApp_Desktop
             SelfRef = this;
             InitializeComponent();
             radioButton_male.Checked = true;
-            radioButton_StyleFree.Checked = true;  
+            radioButton_StyleFree.Checked = true;
             listBox1.Items.AddRange(distance_text);
-            listBox1.SetSelected(0,true);
+            listBox1.SetSelected(0, true);
             label1.Visible = false;
             label2.Visible = false;
             label3.Visible = false;
@@ -67,17 +60,10 @@ namespace RguApp_Desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //GetGender(radioButton_male);
-            //GetGender(radioButton_female);
 
             GetRadio();
             GetDistance();
             GetCoef();
-
-            /*MessageBox.Show(Convert.ToString(gender));
-            MessageBox.Show(Convert.ToString(style));
-            MessageBox.Show(Convert.ToString(distance));
-            MessageBox.Show(Convert.ToString(a));*/
 
             label1.Text = "Введите время";
             label2.Text = "Часы";
@@ -124,9 +110,9 @@ namespace RguApp_Desktop
         {
             label7.Text = "";
             point = 0;
-            if(buttonCount == 1)
+            if (buttonCount == 1)
             {
-                if(textBox1.Text == "")
+                if (textBox1.Text == "")
                     Hour_int = 0;
                 else
                     Hour_int = int.Parse(textBox1.Text);
@@ -177,7 +163,7 @@ namespace RguApp_Desktop
                 label7.Text = "Ваше количество очков = " + point;
 
             }
-            else if(buttonCount == 2)
+            else if (buttonCount == 2)
             {
                 if (textBox1.Text == "")
                     point = 0;
@@ -195,14 +181,14 @@ namespace RguApp_Desktop
             label7.Visible = true;
         }
 
-        private static String timeToString(long time)
+        private static String timeToString(double time)
         {
-            long hour = time / 3600,
-                    min = time / 60 % 60,
-                    sec = time / 1 % 60;
-                    //mil = time /
-            //return String.Format("%02d:%02d:%02d", hour, min, sec);
-            return hour + ":" + min + ":" + sec;
+            double hour = Math.Floor(time / 3600),
+                    min = Math.Floor(time / 60 % 60),
+                    sec = Math.Floor(time / 1 % 60),
+                    mil = Math.Round(time % 60 - Math.Floor(time % 60), 3),
+                    sec2 = sec + mil;
+            return hour.ToString("00") + ":" + min.ToString("00") + ":" + sec2.ToString("00.00");
         }
 
         public void GetRadio()
