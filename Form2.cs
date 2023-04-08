@@ -13,8 +13,8 @@ namespace RguApp_Desktop
     {
 
         private string fileName = string.Empty;
-        private string gender_text, style_text, distance_text = "";
-        private int distance, gender, style, point, table_add = 0;
+        private string gender_text, style_text = "";
+        private int distance, gender, style, point = 0;
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
 
         public double time;
@@ -30,9 +30,8 @@ namespace RguApp_Desktop
             construct_table();
         }
 
-
-        DataGridViewComboBoxCell comboBoxCell1 = new DataGridViewComboBoxCell();
-        DataGridViewComboBoxCell comboBoxCell2 = new DataGridViewComboBoxCell();
+        readonly DataGridViewComboBoxCell comboBoxCell1 = new DataGridViewComboBoxCell();
+        readonly DataGridViewComboBoxCell comboBoxCell2 = new DataGridViewComboBoxCell();
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -43,7 +42,7 @@ namespace RguApp_Desktop
             }
         }
 
-        DataGridViewComboBoxCell comboBoxCell3 = new DataGridViewComboBoxCell();
+        readonly DataGridViewComboBoxCell comboBoxCell3 = new DataGridViewComboBoxCell();
         private void add_combobox()
         {
             dataGridView1.Columns.Add("time", "Время");
@@ -69,7 +68,6 @@ namespace RguApp_Desktop
             dataGridView1.Rows[0].Cells[0] = comboBoxCell1;
             dataGridView1.Rows[0].Cells[1] = comboBoxCell2;
             dataGridView1.Rows[0].Cells[2] = comboBoxCell3;
-
         }
 
 
@@ -210,7 +208,6 @@ namespace RguApp_Desktop
             }
 
             MessageBox.Show("Файл " + "записан успешно!");
-            table_add = 1;
         }
         private void clear_data()
         {
@@ -219,7 +216,7 @@ namespace RguApp_Desktop
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            clear_data();
             try
             {
                 DialogResult res = openFileDialog1.ShowDialog();
@@ -241,7 +238,6 @@ namespace RguApp_Desktop
             {
                 MessageBox.Show(ex.Message, "Ошибика", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            table_add = 1;
             add_combobox();
         }
 
@@ -283,7 +279,7 @@ namespace RguApp_Desktop
 
         private void подсчетToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string str = "";
+           
 
             try
             {
@@ -292,7 +288,7 @@ namespace RguApp_Desktop
                 distance = Convert.ToInt32(comboBoxCell3.Value.ToString());
 
                 GetGenderAndStyle();
-                MessageBox.Show(Convert.ToString(gender));
+                //MessageBox.Show(Convert.ToString(gender));
             }
             catch
             {
@@ -303,15 +299,17 @@ namespace RguApp_Desktop
 
             for (int g = 0; g < dataGridView1.Rows.Count - 1; g++)
             {
+                string str = "";
                 speed = 0;
-                str = dataGridView1[6, g].Value.ToString();
-                string[] arr = str.Split(':', ',', '.');
+                str = dataGridView1.Rows[g].Cells[6].Value.ToString();
+                string[] arr = str.Split(':', ',', '.', ';');
                 int[] intArray = new int[arr.Length];
 
                 for (int p = 0; p < arr.Length; p++)
                 {
                     intArray[p] = Convert.ToInt32(arr[p]);
                 }
+
                 if (arr.Length == 4)
                 {
                     Hour_int = intArray[0];
@@ -334,7 +332,6 @@ namespace RguApp_Desktop
                 {
                     Millisecond_int = intArray[0];
                 }
-
 
                 Final_count = (Millisecond_int + (Second_int * 1000) + (Minute_int * 60 * 1000) + (Hour_int * 60 * 60 * 1000)) / 1000;
                 speed = distance / Final_count;
@@ -363,12 +360,14 @@ namespace RguApp_Desktop
                         }
                     }
                 }
+
                 dataGridView1.Rows[g].Cells[7].Value = point;
                 point = 0;
-                intArray[0] = 0;
-                intArray[1] = 0;
-                intArray[2] = 0;
-                intArray[3] = 0;
+                for(int z = 0; z <= intArray.Length; z++)
+                {
+                    intArray[z] = 0;
+                    arr[z] = "";
+                }
             }
         }
 
