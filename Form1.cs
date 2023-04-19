@@ -167,6 +167,7 @@ namespace RguApp_Desktop
                         }
                     }
                 }
+
                 if (speed >= 0 && point >= 0)
                 {
                     if (speed <= 9)
