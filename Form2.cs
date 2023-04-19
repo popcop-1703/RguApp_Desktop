@@ -46,6 +46,9 @@ namespace RguApp_Desktop
         private void add_combobox()
         {
             dataGridView1.Columns.Add("time", "Время");
+            //ComboBox comboBoxCell1 = new ComboBox();
+            //ComboBox comboBoxCell2 = new ComboBox();
+            //ComboBox comboBoxCell3 = new ComboBox();
 
             comboBoxCell1.Items.Add("Мужской");
             comboBoxCell1.Items.Add("Женский");
@@ -92,7 +95,7 @@ namespace RguApp_Desktop
             dataGridView1.Columns.Add("dist1000", "50000");
             dataGridView1.Columns.Add("dist1000", "70000");
 
-            while (point <= 1900)
+            while (point <= 3000)
             {
                 o = 1;
                 dataGridView1.Rows.Add();
@@ -211,7 +214,30 @@ namespace RguApp_Desktop
         }
         private void clear_data()
         {
-            dataGridView1.Columns.Clear();
+            try
+            {
+                dataGridView1.Rows.Clear();
+            }
+            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных"); }
+
+            try
+            {
+                dataGridView1.DataSource = null;
+            }
+            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных"); }
+
+            try
+            {
+                dataGridView1.Columns.Clear();
+            }
+            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных"); }
+
+            /*for (int p = 0; p< this.dataGridView1.Columns.Count; p++)
+            {
+                this.dataGridView1.Columns.RemoveAt(p);
+                dataGridView1.Columns.Remove(dataGridView1.Columns[p]);
+            }*/
+            
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -279,7 +305,9 @@ namespace RguApp_Desktop
 
         private void подсчетToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            dataGridView1.ClearSelection();
+
+            //dataGridView1.Rows.Add();
 
             try
             {
@@ -292,82 +320,86 @@ namespace RguApp_Desktop
             }
             catch
             {
-                MessageBox.Show("Ошибка в получение базовых значений");
+                MessageBox.Show("Ошибка в получении базовых значений");
             }
 
             GetCoef();
 
-            for (int g = 0; g < dataGridView1.Rows.Count - 1; g++)
+            for (int g = 0; g < dataGridView1.Rows.Count - 2; g++)
             {
-                string str = "";
-                speed = 0;
-                str = dataGridView1.Rows[g].Cells[6].Value.ToString();
-                string[] arr = str.Split(':', ',', '.', ';');
-                int[] intArray = new int[arr.Length];
+                if (dataGridView1.Rows[g].Cells[6].Value != null || dataGridView1.Rows[g].Cells[6].Value.ToString() != "")
+                {
+                    string str = "";
+                    speed = 0;
+                    str = dataGridView1.Rows[g].Cells[6].Value.ToString();
+                    string[] arr = str.Split(':', ',', '.', ';');
+                    int[] intArray = new int[arr.Length];
 
-                for (int p = 0; p < arr.Length; p++)
-                {
-                    intArray[p] = Convert.ToInt32(arr[p]);
-                }
-
-                if (arr.Length == 4)
-                {
-                    Hour_int = intArray[0];
-                    Minute_int = intArray[1];
-                    Second_int = intArray[2];
-                    Millisecond_int = intArray[3];
-                }
-                else if (arr.Length == 3)
-                {
-                    Minute_int = intArray[0];
-                    Second_int = intArray[1];
-                    Millisecond_int = intArray[2];
-                }
-                else if (arr.Length == 2)
-                {
-                    Second_int = intArray[0];
-                    Millisecond_int = intArray[1];
-                }
-                else if (arr.Length == 1)
-                {
-                    Millisecond_int = intArray[0];
-                }
-
-                Final_count = (Millisecond_int + (Second_int * 1000) + (Minute_int * 60 * 1000) + (Hour_int * 60 * 60 * 1000)) / 1000;
-                speed = distance / Final_count;
-                //расчет скорости 
-                //подсчет очков
-                for (int i = 0; i < 2200; i++)
-                {
-                    speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
-                    if (Math.Floor(speed_2) == Math.Floor(speed))
+                    for (int p = 0; p < arr.Length; p++)
                     {
-                        for (double j = 0; j < 1; j += 0.1)
+                        intArray[p] = Convert.ToInt32(arr[p]);
+                    }
+
+                    if (arr.Length == 4)
+                    {
+                        Hour_int = intArray[0];
+                        Minute_int = intArray[1];
+                        Second_int = intArray[2];
+                        Millisecond_int = intArray[3];
+                    }
+                    else if (arr.Length == 3)
+                    {
+                        Minute_int = intArray[0];
+                        Second_int = intArray[1];
+                        Millisecond_int = intArray[2];
+                    }
+                    else if (arr.Length == 2)
+                    {
+                        Second_int = intArray[0];
+                        Millisecond_int = intArray[1];
+                    }
+                    else if (arr.Length == 1)
+                    {
+                        Millisecond_int = intArray[0];
+                    }
+
+                    Final_count = (Millisecond_int + (Second_int * 1000) + (Minute_int * 60 * 1000) + (Hour_int * 60 * 60 * 1000)) / 1000;
+                    speed = distance / Final_count;
+                    //расчет скорости 
+                    //подсчет очков
+                    for (int i = 0; i < 2200; i++)
+                    {
+                        speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                        if (Math.Floor(speed_2) == Math.Floor(speed))
                         {
-                            speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
-                            if ((Math.Ceiling(speed_2 * 10) / 10) == (Math.Ceiling(speed * 10) / 10))
+                            for (double j = 0; j < 1; j += 0.1)
                             {
-                                for (double k = 0; k < 0.1; k += 0.01)
+                                speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                                if ((Math.Ceiling(speed_2 * 10) / 10) == (Math.Ceiling(speed * 10) / 10))
                                 {
-                                    speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
-                                    if ((Math.Ceiling(speed_2 * scale) / scale) == (Math.Ceiling(speed * scale) / scale))
+                                    for (double k = 0; k < 0.1; k += 0.01)
                                     {
-                                        point = i;
-                                        break;
+                                        speed_2 = a * Math.Pow(i, 3) + b * Math.Pow(i, 2) + c * i + d;
+                                        if ((Math.Ceiling(speed_2 * scale) / scale) == (Math.Ceiling(speed * scale) / scale))
+                                        {
+                                            point = i;
+                                            break;
+                                        }
                                     }
                                 }
                             }
                         }
                     }
-                }
 
-                dataGridView1.Rows[g].Cells[7].Value = point;
-                point = 0;
-                for(int z = 0; z <= intArray.Length; z++)
-                {
-                    intArray[z] = 0;
-                    arr[z] = "";
+                    dataGridView1.Rows[g].Cells[7].Value = point;
+                    point = 0;
+                    for (int z = 0; z < intArray.Length; z++)
+                    {
+                        intArray[z] = 0;
+                        arr[z] = "";
+                    }
                 }
+                
             }
         }
 

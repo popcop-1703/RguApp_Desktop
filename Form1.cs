@@ -28,6 +28,8 @@ namespace RguApp_Desktop
             newForm2.ShowDialog();
         }
 
+       
+
         public int point, buttonCount;
         public double scale = Math.Pow(10, 2);
 
@@ -44,6 +46,7 @@ namespace RguApp_Desktop
             radioButton_StyleFree.Checked = true;
             listBox1.Items.AddRange(distance_text);
             listBox1.SetSelected(0, true);
+
             label1.Visible = false;
             label2.Visible = false;
             label3.Visible = false;
@@ -64,6 +67,8 @@ namespace RguApp_Desktop
             GetRadio();
             GetDistance();
             GetCoef();
+            label6.Text = "";
+            label7.Text = "";
 
             label1.Text = "Введите время";
             label2.Text = "Часы";
@@ -91,6 +96,9 @@ namespace RguApp_Desktop
             GetDistance();
             GetCoef();
 
+            label6.Text = "";
+            label7.Text = "";
+
             label1.Text = "Введите желаемое количество очков";
             label2.Text = "Очки";
             label1.Visible = true;
@@ -108,6 +116,7 @@ namespace RguApp_Desktop
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            label6.Text = "";
             label7.Text = "";
             point = 0;
             if (buttonCount == 1)
@@ -158,9 +167,23 @@ namespace RguApp_Desktop
                         }
                     }
                 }
+                if (speed >= 0 && point >= 0)
+                {
+                    if (speed <= 9)
+                    {
+                        label6.Text = "Ваша скорость = " + Math.Round(speed, 2) + " М/С";
+                        label7.Text = "Ваше количество очков = " + point;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Результат не является реалистичным", "Ошибка");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Результат не входит в очковый диапазон", "Ошибка");
+                }
 
-                label6.Text = "Ваша скорость = " + Math.Round(speed, 2) + " М/С";
-                label7.Text = "Ваше количество очков = " + point;
 
             }
             else if (buttonCount == 2)
@@ -170,11 +193,25 @@ namespace RguApp_Desktop
                 else
                     point = int.Parse(textBox1.Text);
 
-                speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
-                time = (long)(distance / speed);
+                if (point >= 0 && point <= 2100)
+                {
+                    speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
+                    time = (long)(distance / speed);
 
-                label6.Text = "Рекомендованная скорость = " + Math.Round(speed, 2) + " М/С";
-                label7.Text = "Результат = " + timeToString(time);
+                    if (speed >= 0)
+                    {
+                        label6.Text = "Рекомендованная скорость = " + Math.Round(speed, 2) + " М/С";
+                        label7.Text = "Результат = " + timeToString(time);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Результат не входит в очковый диапазон", "Ошибка");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Введите целочисленное значение от 0 до 2100", "Ошибка");
+                }
             }
 
             label6.Visible = true;
@@ -577,5 +614,40 @@ namespace RguApp_Desktop
                 MessageBox.Show(rdoButton.Text);
             }
         }*/
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
