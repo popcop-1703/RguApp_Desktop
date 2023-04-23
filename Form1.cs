@@ -23,6 +23,7 @@ namespace RguApp_Desktop
 
         private void button5_Click(object sender, EventArgs e)
         {
+
             GetRadio();
             DataBase.transition = 1;
             newForm2.ShowDialog();
@@ -63,10 +64,6 @@ namespace RguApp_Desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            GetRadio();
-            GetDistance();
-            GetCoef();
             label6.Text = "";
             label7.Text = "";
 
@@ -92,10 +89,6 @@ namespace RguApp_Desktop
 
         private void button3_Click(object sender, EventArgs e)
         {
-            GetRadio();
-            GetDistance();
-            GetCoef();
-
             label6.Text = "";
             label7.Text = "";
 
@@ -116,6 +109,10 @@ namespace RguApp_Desktop
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            GetRadio();
+            GetDistance();
+            GetCoef();
+
             label6.Text = "";
             label7.Text = "";
             point = 0;
@@ -187,6 +184,7 @@ namespace RguApp_Desktop
 
 
             }
+
             else if (buttonCount == 2)
             {
                 if (textBox1.Text == "")

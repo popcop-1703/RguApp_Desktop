@@ -69,7 +69,7 @@
             this.создатьToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // открытьToolStripMenuItem
@@ -105,7 +105,7 @@
             this.обработкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.подсчетToolStripMenuItem});
             this.обработкаToolStripMenuItem.Name = "обработкаToolStripMenuItem";
-            this.обработкаToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
+            this.обработкаToolStripMenuItem.Size = new System.Drawing.Size(99, 26);
             this.обработкаToolStripMenuItem.Text = "Обработка";
             // 
             // подсчетToolStripMenuItem
@@ -120,7 +120,7 @@
             this.допТаблицаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.данныеПоОчкамToolStripMenuItem});
             this.допТаблицаToolStripMenuItem.Name = "допТаблицаToolStripMenuItem";
-            this.допТаблицаToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
+            this.допТаблицаToolStripMenuItem.Size = new System.Drawing.Size(114, 26);
             this.допТаблицаToolStripMenuItem.Text = "доп таблица ";
             // 
             // данныеПоОчкамToolStripMenuItem
@@ -145,13 +145,13 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(41, 25);
-            this.toolStripLabel1.Text = "Лист";
+            this.toolStripLabel1.Size = new System.Drawing.Size(68, 28);
+            this.toolStripLabel1.Text = "Таблица";
             // 
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 28);
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 31);
             this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
             // 
             // dataGridView1

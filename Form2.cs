@@ -38,6 +38,8 @@ namespace RguApp_Desktop
             clear_data();
             if (DataBase.transition == 1)
             {
+                toolStripComboBox1.Items.Add("Времени");
+                toolStripComboBox1.Items.Add("Скорости");
                 construct_table();
             }
         }
@@ -45,7 +47,7 @@ namespace RguApp_Desktop
         readonly DataGridViewComboBoxCell comboBoxCell3 = new DataGridViewComboBoxCell();
         private void add_combobox()
         {
-            dataGridView1.Columns.Add("time", "Время");
+            dataGridView1.Columns.Add("point_", "Очки");
             //ComboBox comboBoxCell1 = new ComboBox();
             //ComboBox comboBoxCell2 = new ComboBox();
             //ComboBox comboBoxCell3 = new ComboBox();
@@ -77,12 +79,13 @@ namespace RguApp_Desktop
         private void construct_table()
         {
             clear_data();
+
             int o = 1;
             point = 1;
             gender = DataBase.gender;
             style = DataBase.style;
 
-            dataGridView1.Columns.Add("time", "Время");
+            dataGridView1.Columns.Add("point_", "Очки");
             dataGridView1.Columns.Add("dist1000", "1000");
             dataGridView1.Columns.Add("dist1000", "2000");
             dataGridView1.Columns.Add("dist1000", "3000");
@@ -95,7 +98,7 @@ namespace RguApp_Desktop
             dataGridView1.Columns.Add("dist1000", "50000");
             dataGridView1.Columns.Add("dist1000", "70000");
 
-            while (point <= 3000)
+            while (point <= 2145)
             {
                 o = 1;
                 dataGridView1.Rows.Add();
@@ -116,6 +119,45 @@ namespace RguApp_Desktop
             }
         }
 
+        private void construct_table_speed()
+        {
+            clear_data();
+            int o = 1;
+            point = 1;
+            gender = DataBase.gender;
+            style = DataBase.style;
+
+            dataGridView1.Columns.Add("point_", "Очки");
+            dataGridView1.Columns.Add("dist1000", "1000");
+            dataGridView1.Columns.Add("dist1000", "2000");
+            dataGridView1.Columns.Add("dist1000", "3000");
+            dataGridView1.Columns.Add("dist1000", "5000");
+            dataGridView1.Columns.Add("dist1000", "7500");
+            dataGridView1.Columns.Add("dist1000", "10000");
+            dataGridView1.Columns.Add("dist1000", "15000");
+            dataGridView1.Columns.Add("dist1000", "20000");
+            dataGridView1.Columns.Add("dist1000", "30000");
+            dataGridView1.Columns.Add("dist1000", "50000");
+            dataGridView1.Columns.Add("dist1000", "70000");
+
+            while (point <= 2145)
+            {
+                o = 1;
+                dataGridView1.Rows.Add();
+                while (o <= 11)
+                {
+                    string headerText = dataGridView1.Columns[o].HeaderText;
+                    distance = Convert.ToInt32(headerText);
+                    GetCoef();
+                    speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
+                    dataGridView1.Rows[point - 1].Cells[o].Value = Math.Round(speed, 2) + " М/C";
+                    o++;
+                }
+
+                dataGridView1.Rows[point - 1].Cells[0].Value = point;
+                point++;
+            }
+        }
 
         private static String timeToString(double time)
         {
@@ -155,6 +197,7 @@ namespace RguApp_Desktop
                     else
                         worksheet.Rows[i + 1].Columns[j] = dataGridView1.Rows[i - 1].Cells[j - 1].Value;
                 }
+                
             }
 
             excelapp.AlertBeforeOverwriting = false;
@@ -212,32 +255,32 @@ namespace RguApp_Desktop
 
             MessageBox.Show("Файл " + "записан успешно!");
         }
+
         private void clear_data()
         {
             try
             {
                 dataGridView1.Rows.Clear();
             }
-            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных"); }
+            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных 1"); }
 
             try
             {
                 dataGridView1.DataSource = null;
             }
-            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных"); }
+            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных 2"); }
 
             try
             {
                 dataGridView1.Columns.Clear();
             }
-            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных"); }
+            catch { MessageBox.Show("Ошибка", "Ошибка в очистке данных 3"); }
 
             /*for (int p = 0; p< this.dataGridView1.Columns.Count; p++)
             {
                 this.dataGridView1.Columns.RemoveAt(p);
                 dataGridView1.Columns.Remove(dataGridView1.Columns[p]);
             }*/
-            
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -294,12 +337,37 @@ namespace RguApp_Desktop
             toolStripComboBox1.SelectedIndex = 0;
 
         }
+           
+
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable table = tableCollection[Convert.ToString(toolStripComboBox1.SelectedItem)];
+            if(DataBase.transition == 0)
+            {
+                DataTable table = tableCollection[Convert.ToString(toolStripComboBox1.SelectedItem)];
 
-            dataGridView1.DataSource = table;
+                dataGridView1.DataSource = table;
+            }
+            else if (DataBase.transition == 1)
+            {
+                // получаем выбранный пункт ToolStripComboBox
+                ToolStripComboBox cmb = sender as ToolStripComboBox;
+                string selectedTable = cmb.SelectedItem.ToString();
+
+                // меняем источник данных DataGridView в зависимости от выбранного пункта
+                if (selectedTable == "Времени")
+                {
+                    //dataGridView1.DataSource = new DataTable("Таблица 1");
+                    construct_table();
+                    // код заполнения таблицы Table1
+                }
+                else if (selectedTable == "Скорости")
+                {
+                    construct_table_speed();
+                    // код заполнения таблицы Table2
+                }
+            }
+ 
         }
 
 
