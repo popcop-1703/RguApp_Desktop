@@ -393,7 +393,7 @@ namespace RguApp_Desktop
 
             GetCoef();
 
-            for (int g = 0; g < dataGridView1.Rows.Count - 2; g++)
+            for (int g = 0; g < dataGridView1.Rows.Count - 1; g++)
             {
                 if (dataGridView1.Rows[g].Cells[6].Value != null || dataGridView1.Rows[g].Cells[6].Value.ToString() != "")
                 {
