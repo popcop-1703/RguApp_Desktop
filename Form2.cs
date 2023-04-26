@@ -30,8 +30,7 @@ namespace RguApp_Desktop
             construct_table();
         }
 
-        readonly DataGridViewComboBoxCell comboBoxCell1 = new DataGridViewComboBoxCell();
-        readonly DataGridViewComboBoxCell comboBoxCell2 = new DataGridViewComboBoxCell();
+        
 
         private void Form2_Load(object sender, EventArgs e)
         {
@@ -44,9 +43,13 @@ namespace RguApp_Desktop
             }
         }
 
+        readonly DataGridViewComboBoxCell comboBoxCell1 = new DataGridViewComboBoxCell();
+        readonly DataGridViewComboBoxCell comboBoxCell2 = new DataGridViewComboBoxCell();
         readonly DataGridViewComboBoxCell comboBoxCell3 = new DataGridViewComboBoxCell();
+
         private void add_combobox()
         {
+           
             dataGridView1.Columns.Add("point_", "Очки");
             //ComboBox comboBoxCell1 = new ComboBox();
             //ComboBox comboBoxCell2 = new ComboBox();
@@ -169,6 +172,22 @@ namespace RguApp_Desktop
             return hour.ToString("00") + ":" + min.ToString("00") + ":" + sec2.ToString("00.00");
         }
 
+        private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+                if (dataGridView1.IsCurrentCellDirty)
+                {
+                    dataGridView1.EndEdit(); // Фиксирование последнего изменения в таблице
+                }
+        }
+
+        private void dataGridView1_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit); // Фиксирование значения ячейки
+            }
+        }
+
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -182,7 +201,7 @@ namespace RguApp_Desktop
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Excel.Application excelapp = new Microsoft.Office.Interop.Excel.Application();
+            Excel.Application excelapp = new Excel.Application();
             Workbook workbook = excelapp.Workbooks.Add();
             Worksheet worksheet = workbook.ActiveSheet;
 
@@ -338,6 +357,15 @@ namespace RguApp_Desktop
 
         }
            
+        private void add_stroka()
+        {
+            // Создание нового объекта DataGridViewRow
+            DataGridViewRow row = new DataGridViewRow();
+            // Установка значений ячеек
+            row.CreateCells(dataGridView1);
+            // Добавление строки в конец datagridview
+            dataGridView1.Rows.Add(row);
+        }
 
 
         private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -369,32 +397,48 @@ namespace RguApp_Desktop
             }
  
         }
-
+        
 
         private void подсчетToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.ClearSelection();
-
+            string distance__ = "1000";
+            //dataGridView1.ClearSelection();
+            dataGridView1.CurrentCell = dataGridView1.Rows[1].Cells[0];
             //dataGridView1.Rows.Add();
 
             try
             {
+                //add_stroka();
+            }
+            catch { MessageBox.Show("Ошибка добавления строки"); }
+            try
+            {
                 gender_text = comboBoxCell1.Value.ToString();
                 style_text = comboBoxCell2.Value.ToString();
-                distance = Convert.ToInt32(comboBoxCell3.Value.ToString());
+                distance__ = comboBoxCell3.Value.ToString();
 
-                GetGenderAndStyle();
                 //MessageBox.Show(Convert.ToString(gender));
             }
             catch
             {
                 MessageBox.Show("Ошибка в получении базовых значений");
             }
+            distance = Convert.ToInt32(distance__);
+            try
+            {
+                GetGenderAndStyle();
+            }
+            catch { MessageBox.Show("Ошибка в получении пола и стиля"); }
+            try
+            {
+                GetCoef();
+            }
+            catch { MessageBox.Show("Ошибка в получении базовых значений"); }
 
-            GetCoef();
 
             for (int g = 0; g < dataGridView1.Rows.Count - 1; g++)
             {
+                point = 0;
                 if (dataGridView1.Rows[g].Cells[6].Value != null || dataGridView1.Rows[g].Cells[6].Value.ToString() != "")
                 {
                     string str = "";
