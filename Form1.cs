@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace RguApp_Desktop
 {
@@ -39,6 +40,14 @@ namespace RguApp_Desktop
             get; set;
         }
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(buttonCount == 1 || buttonCount == 2)
+            {
+                action_button2();
+            }
+        }
+
         public Form1()
         {
             SelfRef = this;
@@ -60,6 +69,84 @@ namespace RguApp_Desktop
             button2.Visible = false;
             label6.Visible = false;
             label7.Visible = false;
+        }
+        bool previousCheckedValue_gender = false;
+        bool previousCheckedValue_style = false;
+
+        private void radioButton_male_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_male.Checked && !previousCheckedValue_gender)
+            {
+                // Изменение выбранного RadioButton
+                // Поместите здесь код, который нужно выполнить при изменении выбранного элемента RadioButton
+                if (buttonCount == 1 || buttonCount == 2)
+                {
+                    action_button2();
+                }
+                previousCheckedValue_gender = true;
+                radioButton_female.Checked = false; // Только для примера, чтобы снять выбор с другого RadioButton
+            }
+            else
+            {
+                previousCheckedValue_gender = false;
+            }
+        }
+
+        private void radioButton_female_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_female.Checked && !previousCheckedValue_gender)
+            {
+                // Изменение выбранного RadioButton
+                // Поместите здесь код, который нужно выполнить при изменении выбранного элемента RadioButton
+                if (buttonCount == 1 || buttonCount == 2)
+                {
+                    action_button2();
+                }
+                previousCheckedValue_gender = true;
+                radioButton_male.Checked = false; // Только для примера, чтобы снять выбор с другого RadioButton
+            }
+            else
+            {
+                previousCheckedValue_gender = false;
+            }
+        }
+
+        private void radioButton_StyleFree_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_StyleFree.Checked && !previousCheckedValue_gender)
+            {
+                // Изменение выбранного RadioButton
+                // Поместите здесь код, который нужно выполнить при изменении выбранного элемента RadioButton
+                if (buttonCount == 1 || buttonCount == 2)
+                {
+                    action_button2();
+                }
+                previousCheckedValue_style = true;
+                radioButton_StyleClassic.Checked = false; // Только для примера, чтобы снять выбор с другого RadioButton
+            }
+            else
+            {
+                previousCheckedValue_gender = false;
+            }
+        }
+
+        private void radioButton_StyleClassic_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton_StyleClassic.Checked && !previousCheckedValue_gender)
+            {
+                // Изменение выбранного RadioButton
+                // Поместите здесь код, который нужно выполнить при изменении выбранного элемента RadioButton
+                if (buttonCount == 1 || buttonCount == 2)
+                {
+                    action_button2();
+                }
+                previousCheckedValue_style = true;
+                radioButton_StyleFree.Checked = false; // Только для примера, чтобы снять выбор с другого RadioButton
+            }
+            else
+            {
+                previousCheckedValue_gender = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -107,15 +194,18 @@ namespace RguApp_Desktop
 
             buttonCount = 2;
         }
-        private void button2_Click(object sender, EventArgs e)
+
+        private void action_button2()
         {
             GetRadio();
             GetDistance();
             GetCoef();
 
+
             label6.Text = "";
             label7.Text = "";
             point = 0;
+
             if (buttonCount == 1)
             {
                 if (textBox1.Text == "")
@@ -215,6 +305,14 @@ namespace RguApp_Desktop
 
             label6.Visible = true;
             label7.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            action_button2();
+
+
         }
 
         private static String timeToString(double time)

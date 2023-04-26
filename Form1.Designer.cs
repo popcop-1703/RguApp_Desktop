@@ -88,6 +88,7 @@
             this.radioButton_female.TabStop = true;
             this.radioButton_female.Text = "Женский";
             this.radioButton_female.UseVisualStyleBackColor = true;
+            this.radioButton_female.CheckedChanged += new System.EventHandler(this.radioButton_female_CheckedChanged);
             // 
             // radioButton_male
             // 
@@ -99,6 +100,7 @@
             this.radioButton_male.TabStop = true;
             this.radioButton_male.Text = "Мужской";
             this.radioButton_male.UseVisualStyleBackColor = true;
+            this.radioButton_male.CheckedChanged += new System.EventHandler(this.radioButton_male_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -122,6 +124,7 @@
             this.radioButton_StyleClassic.TabStop = true;
             this.radioButton_StyleClassic.Text = "Классический";
             this.radioButton_StyleClassic.UseVisualStyleBackColor = true;
+            this.radioButton_StyleClassic.CheckedChanged += new System.EventHandler(this.radioButton_StyleClassic_CheckedChanged);
             // 
             // radioButton_StyleFree
             // 
@@ -133,6 +136,7 @@
             this.radioButton_StyleFree.TabStop = true;
             this.radioButton_StyleFree.Text = "Свободный";
             this.radioButton_StyleFree.UseVisualStyleBackColor = true;
+            this.radioButton_StyleFree.CheckedChanged += new System.EventHandler(this.radioButton_StyleFree_CheckedChanged);
             // 
             // listBox1
             // 
@@ -143,6 +147,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(191, 404);
             this.listBox1.TabIndex = 6;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label1
             // 
