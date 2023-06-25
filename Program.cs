@@ -13,7 +13,11 @@ namespace RguApp_Desktop
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            var form = new MainForm();
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.WindowState = FormWindowState.Normal;
+            form.Size = new System.Drawing.Size(Screen.PrimaryScreen.WorkingArea.Width / 2, Screen.PrimaryScreen.WorkingArea.Height);
+            Application.Run(form);
         }
     }
 }
