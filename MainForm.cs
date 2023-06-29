@@ -16,6 +16,8 @@ namespace RguApp_Desktop
         public MainForm()
         {
             InitializeComponent();
+            button1.ImageAlign = ContentAlignment.TopCenter;
+            button1.TextImageRelation = TextImageRelation.ImageAboveText;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -23,6 +25,12 @@ namespace RguApp_Desktop
             GraphicsPath gp = new GraphicsPath();
             gp.AddEllipse(0, 0, button1.Width - 1, button1.Height - 1); // задаем форму кнопки
             button1.Region = new Region(gp); // применяем форму к кнопке
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           PointForm formPoint = new PointForm();
+            formPoint.Show();
         }
     }
 }
