@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RguApp_Desktop.Controls;
+using RguApp_Desktop.Components;
 
 namespace RguApp_Desktop
 {
@@ -16,15 +18,17 @@ namespace RguApp_Desktop
         public MainForm()
         {
             InitializeComponent();
-            button1.ImageAlign = ContentAlignment.TopCenter;
-            button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            // button1.ImageAlign = ContentAlignment.TopCenter;
+            // button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            button1.Text = "Подсчет очков";
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            GraphicsPath gp = new GraphicsPath();
-            gp.AddEllipse(0, 0, button1.Width - 1, button1.Height - 1); // задаем форму кнопки
-            button1.Region = new Region(gp); // применяем форму к кнопке
+          //  GraphicsPath gp = new GraphicsPath();
+           // gp.AddEllipse(0, 0, button1.Width - 1, button1.Height - 1); // задаем форму кнопки
+           // button1.Region = new Region(gp); // применяем форму к кнопке
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,5 +36,11 @@ namespace RguApp_Desktop
            PointForm formPoint = new PointForm();
             formPoint.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

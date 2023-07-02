@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new RguApp_Desktop.Controls.c_Button();
+            this.button3 = new RguApp_Desktop.Controls.c_Button();
+            this.button1 = new RguApp_Desktop.Controls.c_Button();
             this.SuspendLayout();
             // 
             // label1
@@ -48,11 +48,14 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(124)))), ((int)(((byte)(174)))));
-            this.button2.Location = new System.Drawing.Point(60, 397);
+            this.button2.Location = new System.Drawing.Point(58, 436);
             this.button2.Name = "button2";
+            this.button2.Rounding = 40;
+            this.button2.RoundingEnable = true;
             this.button2.Size = new System.Drawing.Size(171, 99);
             this.button2.TabIndex = 2;
             this.button2.Text = "Работа с протоколом результатов";
+            this.button2.TextHover = null;
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -60,19 +63,25 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.button3.Location = new System.Drawing.Point(275, 331);
             this.button3.Name = "button3";
+            this.button3.Rounding = 40;
+            this.button3.RoundingEnable = true;
             this.button3.Size = new System.Drawing.Size(155, 100);
             this.button3.TabIndex = 3;
             this.button3.Text = "Таблица эквивалентных результатов";
+            this.button3.TextHover = null;
             this.button3.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(229)))), ((int)(((byte)(243)))));
-            this.button1.Location = new System.Drawing.Point(60, 223);
+            this.button1.Location = new System.Drawing.Point(58, 278);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 125);
+            this.button1.Rounding = 40;
+            this.button1.RoundingEnable = true;
+            this.button1.Size = new System.Drawing.Size(171, 99);
             this.button1.TabIndex = 1;
             this.button1.Text = "Подсчет очков";
+            this.button1.TextHover = "Подсчет очков";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -97,8 +106,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private Controls.c_Button button1;
+        private Controls.c_Button button2;
+        private Controls.c_Button button3;
     }
 }

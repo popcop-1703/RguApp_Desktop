@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RguApp_Desktop.Controls;
+using RguApp_Desktop.Components;
+
 
 namespace RguApp_Desktop
 {

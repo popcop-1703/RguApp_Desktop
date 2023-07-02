@@ -107,7 +107,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animation\Animation.cs" />
+    <Compile Include="Components\RoundingButtonsComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\c_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="Design.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
