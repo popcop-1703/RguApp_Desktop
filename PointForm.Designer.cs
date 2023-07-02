@@ -54,7 +54,7 @@
             this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.bg;
             this.pictureBox1.Location = new System.Drawing.Point(0, -3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(818, 697);
+            this.pictureBox1.Size = new System.Drawing.Size(821, 698);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -136,6 +136,7 @@
             this.comboBox2.Size = new System.Drawing.Size(202, 39);
             this.comboBox2.TabIndex = 0;
             this.comboBox2.TextHover = null;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // groupBox3
             // 

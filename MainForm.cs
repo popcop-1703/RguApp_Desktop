@@ -15,6 +15,8 @@ namespace RguApp_Desktop
 {
     public partial class MainForm : Form
     {
+        Form2 newForm2 = new Form2();
+
         public MainForm()
         {
             InitializeComponent();
@@ -24,23 +26,27 @@ namespace RguApp_Desktop
             
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-          //  GraphicsPath gp = new GraphicsPath();
-           // gp.AddEllipse(0, 0, button1.Width - 1, button1.Height - 1); // задаем форму кнопки
-           // button1.Region = new Region(gp); // применяем форму к кнопке
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
            PointForm formPoint = new PointForm();
             formPoint.Show();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
-
+            DataBase.transition = 0;
+            //GetRadio();
+            newForm2.Owner = this;
+            newForm2.ShowDialog();
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //GetRadio();
+            //DataBase.gender = 1;
+            //DataBase.style = 1;
+            DataBase.transition = 1;
+            newForm2.ShowDialog();
+        }
     }
 }

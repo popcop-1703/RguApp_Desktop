@@ -69,5 +69,25 @@ namespace RguApp_Desktop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f9d590ca_5097_4cca_b910_c48efdc8364e {
+            get {
+                object obj = ResourceManager.GetObject("f9d590ca-5097-4cca-b910-c48efdc8364e", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap f9d590ca_5097_4cca_b910_c48efdc8364e_PhotoRoom_png_PhotoRoom {
+            get {
+                object obj = ResourceManager.GetObject("f9d590ca-5097-4cca-b910-c48efdc8364e-PhotoRoom.png-PhotoRoom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

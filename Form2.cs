@@ -34,11 +34,15 @@ namespace RguApp_Desktop
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            toolStripComboBox2.SelectedIndex = 0;
+            toolStripComboBox3.SelectedIndex = 0;
             clear_data();
             if (DataBase.transition == 1)
             {
+                
                 toolStripComboBox1.Items.Add("Времени");
                 toolStripComboBox1.Items.Add("Скорости");
+                toolStripComboBox1.SelectedIndex = 0;
                 construct_table();
             }
         }
@@ -85,8 +89,8 @@ namespace RguApp_Desktop
 
             int o = 1;
             point = 1;
-            gender = DataBase.gender;
-            style = DataBase.style;
+            gender = toolStripComboBox2.SelectedIndex + 1;
+            style = toolStripComboBox3.SelectedIndex + 1;
 
             dataGridView1.Columns.Add("point_", "Очки");
             dataGridView1.Columns.Add("dist1000", "1000");
@@ -127,8 +131,8 @@ namespace RguApp_Desktop
             clear_data();
             int o = 1;
             point = 1;
-            gender = DataBase.gender;
-            style = DataBase.style;
+            gender = toolStripComboBox2.SelectedIndex + 1;
+            style = toolStripComboBox3.SelectedIndex + 1;
 
             dataGridView1.Columns.Add("point_", "Очки");
             dataGridView1.Columns.Add("dist1000", "1000");
@@ -185,6 +189,55 @@ namespace RguApp_Desktop
             if (dataGridView1.IsCurrentCellDirty)
             {
                 dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit); // Фиксирование значения ячейки
+            }
+        }
+
+        private void toolStripComboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clear_data();
+            if (DataBase.transition == 1)
+            {
+                gender = toolStripComboBox2.SelectedIndex;
+                style = toolStripComboBox3.SelectedIndex;
+                // получаем выбранный пункт ToolStripComboBox
+
+                // меняем источник данных DataGridView в зависимости от выбранного пункта
+
+                if (toolStripComboBox1.Text == "Времени")
+                {
+                    //dataGridView1.DataSource = new DataTable("Таблица 1");
+                    construct_table();
+                    // код заполнения таблицы Table1
+                }
+                else if (toolStripComboBox1.Text == "Скорости")
+                {
+                    construct_table_speed();
+                    // код заполнения таблицы Table2
+                }
+            }
+           
+        }
+
+        private void toolStripComboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            clear_data();
+            if (DataBase.transition == 1)
+            {
+                gender = toolStripComboBox2.SelectedIndex;
+                style = toolStripComboBox3.SelectedIndex;
+
+                // меняем источник данных DataGridView в зависимости от выбранного пункта
+                if (toolStripComboBox1.Text == "Времени")
+                {
+                    //dataGridView1.DataSource = new DataTable("Таблица 1");
+                    construct_table();
+                    // код заполнения таблицы Table1
+                }
+                else if (toolStripComboBox1.Text == "Скорости")
+                {
+                    construct_table_speed();
+                    // код заполнения таблицы Table2
+                }
             }
         }
 
