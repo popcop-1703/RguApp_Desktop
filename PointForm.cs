@@ -29,5 +29,10 @@ namespace RguApp_Desktop
             // Установите свойство BackgroundImageLayout как "Zoom"
             this.BackgroundImageLayout = ImageLayout.Zoom;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

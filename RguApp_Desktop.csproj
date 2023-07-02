@@ -114,6 +114,12 @@
     <Compile Include="Controls\c_Button.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\c_GroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\с_ComBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Design.cs" />
     <Compile Include="Form1.cs">

@@ -31,13 +31,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new RguApp_Desktop.Controls.c_ComBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new RguApp_Desktop.Controls.c_ComBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new RguApp_Desktop.Controls.c_ComBox();
+            this.button1 = new RguApp_Desktop.Controls.c_Button();
+            this.button2 = new RguApp_Desktop.Controls.c_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -50,9 +52,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.bg;
-            this.pictureBox1.Location = new System.Drawing.Point(1, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(0, -3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(797, 664);
+            this.pictureBox1.Size = new System.Drawing.Size(818, 697);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -66,7 +68,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox1.Location = new System.Drawing.Point(65, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(664, 73);
+            this.groupBox1.Size = new System.Drawing.Size(685, 73);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -89,10 +91,12 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.comboBox1.Location = new System.Drawing.Point(426, 22);
+            this.comboBox1.Location = new System.Drawing.Point(447, 22);
             this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RoundingEnable = false;
             this.comboBox1.Size = new System.Drawing.Size(202, 39);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.TextHover = null;
             // 
             // groupBox2
             // 
@@ -103,7 +107,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox2.Location = new System.Drawing.Point(65, 114);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(664, 73);
+            this.groupBox2.Size = new System.Drawing.Size(685, 73);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
@@ -124,12 +128,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский"});
-            this.comboBox2.Location = new System.Drawing.Point(426, 22);
+            "Свободный",
+            "Классический"});
+            this.comboBox2.Location = new System.Drawing.Point(447, 22);
             this.comboBox2.Name = "comboBox2";
+            this.comboBox2.RoundingEnable = true;
             this.comboBox2.Size = new System.Drawing.Size(202, 39);
             this.comboBox2.TabIndex = 0;
+            this.comboBox2.TextHover = null;
             // 
             // groupBox3
             // 
@@ -140,7 +146,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox3.Location = new System.Drawing.Point(65, 218);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(664, 73);
+            this.groupBox3.Size = new System.Drawing.Size(685, 73);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             // 
@@ -161,18 +167,65 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
-            "Мужской",
-            "Женский"});
-            this.comboBox3.Location = new System.Drawing.Point(426, 22);
+            "1 км",
+            "2 км",
+            "3 км",
+            "5 км",
+            "7.5 км",
+            "10 км",
+            "15 км",
+            "20 км",
+            "30 км",
+            "50 км",
+            "70 км"});
+            this.comboBox3.Location = new System.Drawing.Point(447, 22);
             this.comboBox3.Name = "comboBox3";
+            this.comboBox3.RoundingEnable = false;
             this.comboBox3.Size = new System.Drawing.Size(202, 39);
             this.comboBox3.TabIndex = 0;
+            this.comboBox3.TextHover = null;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(263, 426);
+            this.button1.Name = "button1";
+            this.button1.Rounding = 40;
+            this.button1.RoundingEnable = true;
+            this.button1.Size = new System.Drawing.Size(227, 83);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Результат";
+            this.button1.TextHover = null;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(263, 551);
+            this.button2.Name = "button2";
+            this.button2.Rounding = 40;
+            this.button2.RoundingEnable = true;
+            this.button2.Size = new System.Drawing.Size(227, 87);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Очки";
+            this.button2.TextHover = null;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // PointForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 663);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(821, 693);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -196,12 +249,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private Controls.c_Button button1;
+        private Controls.c_Button button2;
+        private Controls.c_ComBox comboBox1;
+        private Controls.c_ComBox comboBox2;
+        private Controls.c_ComBox comboBox3;
     }
 }
