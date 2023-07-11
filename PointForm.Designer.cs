@@ -158,9 +158,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(7, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 32);
+            this.label3.Size = new System.Drawing.Size(158, 32);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Километраж";
+            this.label3.Text = "Дистанция";
             // 
             // comboBox3
             // 

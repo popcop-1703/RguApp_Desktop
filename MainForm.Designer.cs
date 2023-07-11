@@ -43,11 +43,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(12, 47);
+            this.label1.Location = new System.Drawing.Point(12, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(561, 52);
+            this.label1.Size = new System.Drawing.Size(763, 102);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Результаты соревнований";
+            this.label1.Text = "Спортивно-технические результаты \r\nв лыжных гонках";
             // 
             // button2
             // 
@@ -100,7 +100,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.f9d590ca_5097_4cca_b910_c48efdc8364e_PhotoRoom_png_PhotoRoom;
-            this.pictureBox1.Location = new System.Drawing.Point(724, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(755, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 208);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
