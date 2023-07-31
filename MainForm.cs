@@ -28,7 +28,7 @@ namespace RguApp_Desktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-           PointForm formPoint = new PointForm();
+           PoForm formPoint = new PoForm();
             formPoint.Show();
         }
 

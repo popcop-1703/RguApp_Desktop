@@ -19,6 +19,7 @@ namespace RguApp_Desktop
         {
             InitializeComponent();
             //Image backgroundImage = Image.FromFile("Resources/bg.png");
+            
         }
 
         private void PointForm_SizeChanged(object sender, EventArgs e)
@@ -39,5 +40,12 @@ namespace RguApp_Desktop
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
