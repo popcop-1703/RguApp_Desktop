@@ -89,5 +89,15 @@ namespace RguApp_Desktop.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_icon_turn_back_4012680_2 {
+            get {
+                object obj = ResourceManager.GetObject("free-icon-turn-back-4012680 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

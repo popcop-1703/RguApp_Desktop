@@ -16,27 +16,47 @@ namespace RguApp_Desktop
         double a, b, c, d, speed, Final_count, speed_2, time;
         int distance, gender, style, point;
 
-        
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = MainPage;
+        }
 
         int Hour, Minute, Second, Millisecond;
 
         public PoForm()
         {
             InitializeComponent();
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
         }
 
         private void RezPageButton_Click(object sender, EventArgs e)
         {
+            DataBase.po_Gender = comboBox1.SelectedIndex;
+            DataBase.po_Style = comboBox2.SelectedIndex;
+            DataBase.po_Distance = comboBox3.SelectedIndex;
             tabControl1.SelectedTab = RezPage;
+            c_ComBox3.SelectedIndex = DataBase.po_Gender;
+            c_ComBox2.SelectedIndex = DataBase.po_Style;
+            c_ComBox1.SelectedIndex = DataBase.po_Distance;
         }
 
         private void PointPageButton_Click(object sender, EventArgs e)
         {
+            DataBase.po_Gender = comboBox1.SelectedIndex;
+            DataBase.po_Style = comboBox2.SelectedIndex;
+            DataBase.po_Distance = comboBox3.SelectedIndex;
             tabControl1.SelectedTab = PointPage;
+            GenderComboBox.SelectedIndex = DataBase.po_Gender;
+            StyleComboBox.SelectedIndex = DataBase.po_Style;
+            DistanceComboBox.SelectedIndex = DataBase.po_Distance;
         }
 
         private void CalcPointButton_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
+            textBox2.Text = "";
             GetDataPoint();
             GetCoef();
 
@@ -68,6 +88,8 @@ namespace RguApp_Desktop
 
         private void CalcRezButton_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
+            textBox2.Text = "";
             GetDataRez();
             GetCoef();
 

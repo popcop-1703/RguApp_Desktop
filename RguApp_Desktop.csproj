@@ -217,5 +217,8 @@
   <ItemGroup>
     <None Include="Resources\f9d590ca-5097-4cca-b910-c48efdc8364e-PhotoRoom.png-PhotoRoom.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-icon-turn-back-4012680 2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
