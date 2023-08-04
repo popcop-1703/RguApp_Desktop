@@ -15,13 +15,64 @@ namespace RguApp_Desktop
         double scale = Math.Pow(10, 2);
         double a, b, c, d, speed, Final_count, speed_2, time;
         int distance, gender, style, point;
+        int Hour, Minute, Second, Millisecond;
 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void c_ComBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            tabControl1.SelectedTab = MainPage;
+            if (!char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Отменяет ввод символа, если это не управляющий символ 
+            }
         }
 
-        int Hour, Minute, Second, Millisecond;
+        private void GenderComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Отменяет ввод символа, если это не управляющий символ 
+                }
+        }
+
+        private void PointComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Отменяет ввод символа, если это не цифра или управляющий символ (например, Backspace)
+            }
+        }
+
+        private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Отменяет ввод символа, если это не управляющий символ 
+            }
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+           //MainForm.Show();
+           Close();
+
+        }
+
+        private void c_ComBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Отменяет ввод символа, если это не цифра или управляющий символ (например, Backspace)
+            }
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == MainPage)
+            {
+                comboBox1.SelectedIndex = DataBase.po_Gender;
+                comboBox2.SelectedIndex = DataBase.po_Style;
+                comboBox3.SelectedIndex = DataBase.po_Distance;
+            }
+        }
 
         public PoForm()
         {
@@ -29,6 +80,23 @@ namespace RguApp_Desktop
             comboBox1.SelectedIndex = 0;
             comboBox2.SelectedIndex = 0;
             comboBox3.SelectedIndex = 0;
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            DataBase.po_Gender = GenderComboBox.SelectedIndex;
+            DataBase.po_Style = StyleComboBox.SelectedIndex;
+            DataBase.po_Distance = DistanceComboBox.SelectedIndex;
+            tabControl1.SelectedIndex = 0;
+            tabControl1.SelectedTab = MainPage;
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            DataBase.po_Gender = c_ComBox3.SelectedIndex;
+            DataBase.po_Style = c_ComBox2.SelectedIndex;
+            DataBase.po_Distance = c_ComBox1.SelectedIndex;
+            tabControl1.SelectedTab = MainPage;  
         }
 
         private void RezPageButton_Click(object sender, EventArgs e)
@@ -40,6 +108,7 @@ namespace RguApp_Desktop
             c_ComBox3.SelectedIndex = DataBase.po_Gender;
             c_ComBox2.SelectedIndex = DataBase.po_Style;
             c_ComBox1.SelectedIndex = DataBase.po_Distance;
+
         }
 
         private void PointPageButton_Click(object sender, EventArgs e)

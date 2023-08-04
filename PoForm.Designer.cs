@@ -43,6 +43,7 @@
             this.comboBox1 = new RguApp_Desktop.Controls.c_ComBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.RezPage = new System.Windows.Forms.TabPage();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.CalcRezButton = new RguApp_Desktop.Controls.c_Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -92,6 +93,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.GenderComboBox = new RguApp_Desktop.Controls.c_ComBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -99,6 +101,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.RezPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -116,6 +119,7 @@
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -127,8 +131,9 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1088, 1070);
+            this.tabControl1.Size = new System.Drawing.Size(1072, 985);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // MainPage
             // 
@@ -141,7 +146,7 @@
             this.MainPage.Location = new System.Drawing.Point(4, 25);
             this.MainPage.Name = "MainPage";
             this.MainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MainPage.Size = new System.Drawing.Size(1080, 1041);
+            this.MainPage.Size = new System.Drawing.Size(1064, 956);
             this.MainPage.TabIndex = 0;
             this.MainPage.Text = "Main";
             this.MainPage.UseVisualStyleBackColor = true;
@@ -153,10 +158,10 @@
             this.PointPageButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PointPageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PointPageButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PointPageButton.Location = new System.Drawing.Point(328, 692);
+            this.PointPageButton.Location = new System.Drawing.Point(255, 588);
             this.PointPageButton.Name = "PointPageButton";
             this.PointPageButton.RoundingEnable = true;
-            this.PointPageButton.Size = new System.Drawing.Size(319, 94);
+            this.PointPageButton.Size = new System.Drawing.Size(506, 94);
             this.PointPageButton.TabIndex = 11;
             this.PointPageButton.Text = "Очки";
             this.PointPageButton.TextHover = null;
@@ -169,10 +174,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RezPageButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RezPageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RezPageButton.Location = new System.Drawing.Point(328, 558);
+            this.RezPageButton.Location = new System.Drawing.Point(255, 455);
             this.RezPageButton.Name = "RezPageButton";
             this.RezPageButton.RoundingEnable = true;
-            this.RezPageButton.Size = new System.Drawing.Size(319, 90);
+            this.RezPageButton.Size = new System.Drawing.Size(506, 90);
             this.RezPageButton.TabIndex = 10;
             this.RezPageButton.Text = "Результат";
             this.RezPageButton.TextHover = null;
@@ -187,9 +192,9 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.comboBox3);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox3.Location = new System.Drawing.Point(130, 265);
+            this.groupBox3.Location = new System.Drawing.Point(52, 252);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(777, 80);
+            this.groupBox3.Size = new System.Drawing.Size(894, 80);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
@@ -221,12 +226,13 @@
             "30 км",
             "50 км",
             "70 км"});
-            this.comboBox3.Location = new System.Drawing.Point(539, 22);
+            this.comboBox3.Location = new System.Drawing.Point(656, 22);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.RoundingEnable = false;
             this.comboBox3.Size = new System.Drawing.Size(202, 39);
             this.comboBox3.TabIndex = 0;
             this.comboBox3.TextHover = null;
+            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // groupBox2
             // 
@@ -236,9 +242,9 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(130, 161);
+            this.groupBox2.Location = new System.Drawing.Point(52, 151);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(777, 80);
+            this.groupBox2.Size = new System.Drawing.Size(894, 80);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
@@ -261,12 +267,13 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Свободный",
             "Классический"});
-            this.comboBox2.Location = new System.Drawing.Point(539, 22);
+            this.comboBox2.Location = new System.Drawing.Point(656, 22);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.RoundingEnable = true;
             this.comboBox2.Size = new System.Drawing.Size(202, 39);
             this.comboBox2.TabIndex = 0;
             this.comboBox2.TextHover = null;
+            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // groupBox1
             // 
@@ -276,9 +283,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(130, 59);
+            this.groupBox1.Location = new System.Drawing.Point(52, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(777, 80);
+            this.groupBox1.Size = new System.Drawing.Size(894, 80);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -301,12 +308,13 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.comboBox1.Location = new System.Drawing.Point(539, 22);
+            this.comboBox1.Location = new System.Drawing.Point(656, 22);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RoundingEnable = false;
             this.comboBox1.Size = new System.Drawing.Size(202, 39);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.TextHover = null;
+            this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
             // 
             // pictureBox1
             // 
@@ -315,13 +323,14 @@
             this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.bg;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1074, 1035);
+            this.pictureBox1.Size = new System.Drawing.Size(1058, 950);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // RezPage
             // 
+            this.RezPage.Controls.Add(this.pictureBox5);
             this.RezPage.Controls.Add(this.CalcRezButton);
             this.RezPage.Controls.Add(this.groupBox11);
             this.RezPage.Controls.Add(this.groupBox10);
@@ -335,10 +344,25 @@
             this.RezPage.Location = new System.Drawing.Point(4, 25);
             this.RezPage.Name = "RezPage";
             this.RezPage.Padding = new System.Windows.Forms.Padding(3);
-            this.RezPage.Size = new System.Drawing.Size(1080, 1041);
+            this.RezPage.Size = new System.Drawing.Size(1064, 956);
             this.RezPage.TabIndex = 1;
             this.RezPage.Text = "Rez";
             this.RezPage.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::RguApp_Desktop.Properties.Resources.free_icon_turn_back_4012680_2;
+            this.pictureBox5.Location = new System.Drawing.Point(859, 860);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(87, 88);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 26;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // CalcRezButton
             // 
@@ -346,11 +370,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalcRezButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.CalcRezButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CalcRezButton.Location = new System.Drawing.Point(349, 881);
+            this.CalcRezButton.Location = new System.Drawing.Point(351, 824);
             this.CalcRezButton.Name = "CalcRezButton";
             this.CalcRezButton.Rounding = 35;
             this.CalcRezButton.RoundingEnable = true;
-            this.CalcRezButton.Size = new System.Drawing.Size(254, 81);
+            this.CalcRezButton.Size = new System.Drawing.Size(365, 81);
             this.CalcRezButton.TabIndex = 16;
             this.CalcRezButton.Text = "Рассчитать";
             this.CalcRezButton.TextHover = null;
@@ -367,9 +391,9 @@
             this.groupBox11.Controls.Add(this.textBox1);
             this.groupBox11.Controls.Add(this.label11);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox11.Location = new System.Drawing.Point(668, 484);
+            this.groupBox11.Location = new System.Drawing.Point(655, 433);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(291, 333);
+            this.groupBox11.Size = new System.Drawing.Size(291, 348);
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             // 
@@ -378,7 +402,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(12, 257);
+            this.textBox2.Location = new System.Drawing.Point(12, 272);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(250, 38);
             this.textBox2.TabIndex = 3;
@@ -387,7 +411,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 185);
+            this.label12.Location = new System.Drawing.Point(6, 200);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(253, 32);
             this.label12.TabIndex = 2;
@@ -420,9 +444,9 @@
             this.groupBox10.Controls.Add(this.c_ComBox7);
             this.groupBox10.Controls.Add(this.label10);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox10.Location = new System.Drawing.Point(130, 735);
+            this.groupBox10.Location = new System.Drawing.Point(52, 681);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(326, 76);
+            this.groupBox10.Size = new System.Drawing.Size(366, 76);
             this.groupBox10.TabIndex = 15;
             this.groupBox10.TabStop = false;
             // 
@@ -531,13 +555,14 @@
             "97",
             "98",
             "99"});
-            this.c_ComBox7.Location = new System.Drawing.Point(159, 23);
+            this.c_ComBox7.Location = new System.Drawing.Point(199, 23);
             this.c_ComBox7.MaxLength = 2;
             this.c_ComBox7.Name = "c_ComBox7";
             this.c_ComBox7.RoundingEnable = false;
             this.c_ComBox7.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox7.TabIndex = 1;
             this.c_ComBox7.TextHover = null;
+            this.c_ComBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label10
             // 
@@ -557,9 +582,9 @@
             this.groupBox9.Controls.Add(this.c_ComBox6);
             this.groupBox9.Controls.Add(this.label9);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox9.Location = new System.Drawing.Point(130, 653);
+            this.groupBox9.Location = new System.Drawing.Point(52, 599);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(326, 76);
+            this.groupBox9.Size = new System.Drawing.Size(366, 76);
             this.groupBox9.TabIndex = 15;
             this.groupBox9.TabStop = false;
             // 
@@ -668,13 +693,14 @@
             "97",
             "98",
             "99"});
-            this.c_ComBox6.Location = new System.Drawing.Point(159, 23);
+            this.c_ComBox6.Location = new System.Drawing.Point(199, 23);
             this.c_ComBox6.MaxLength = 2;
             this.c_ComBox6.Name = "c_ComBox6";
             this.c_ComBox6.RoundingEnable = false;
             this.c_ComBox6.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox6.TabIndex = 1;
             this.c_ComBox6.TextHover = null;
+            this.c_ComBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label9
             // 
@@ -694,9 +720,9 @@
             this.groupBox8.Controls.Add(this.c_ComBox5);
             this.groupBox8.Controls.Add(this.label8);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox8.Location = new System.Drawing.Point(130, 571);
+            this.groupBox8.Location = new System.Drawing.Point(52, 517);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(326, 76);
+            this.groupBox8.Size = new System.Drawing.Size(366, 76);
             this.groupBox8.TabIndex = 15;
             this.groupBox8.TabStop = false;
             // 
@@ -765,13 +791,14 @@
             "57",
             "58",
             "59"});
-            this.c_ComBox5.Location = new System.Drawing.Point(159, 23);
+            this.c_ComBox5.Location = new System.Drawing.Point(199, 23);
             this.c_ComBox5.MaxLength = 2;
             this.c_ComBox5.Name = "c_ComBox5";
             this.c_ComBox5.RoundingEnable = false;
             this.c_ComBox5.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox5.TabIndex = 1;
             this.c_ComBox5.TextHover = null;
+            this.c_ComBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label8
             // 
@@ -791,9 +818,9 @@
             this.groupBox7.Controls.Add(this.c_ComBox4);
             this.groupBox7.Controls.Add(this.label7);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox7.Location = new System.Drawing.Point(130, 489);
+            this.groupBox7.Location = new System.Drawing.Point(52, 435);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(326, 76);
+            this.groupBox7.Size = new System.Drawing.Size(366, 76);
             this.groupBox7.TabIndex = 14;
             this.groupBox7.TabStop = false;
             // 
@@ -813,13 +840,14 @@
             "8",
             "9",
             "10"});
-            this.c_ComBox4.Location = new System.Drawing.Point(159, 23);
+            this.c_ComBox4.Location = new System.Drawing.Point(199, 23);
             this.c_ComBox4.MaxLength = 2;
             this.c_ComBox4.Name = "c_ComBox4";
             this.c_ComBox4.RoundingEnable = false;
             this.c_ComBox4.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox4.TabIndex = 1;
             this.c_ComBox4.TextHover = null;
+            this.c_ComBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label7
             // 
@@ -840,9 +868,9 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.c_ComBox1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox4.Location = new System.Drawing.Point(130, 265);
+            this.groupBox4.Location = new System.Drawing.Point(52, 252);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(829, 86);
+            this.groupBox4.Size = new System.Drawing.Size(894, 80);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             // 
@@ -874,12 +902,13 @@
             "30 км",
             "50 км",
             "70 км"});
-            this.c_ComBox1.Location = new System.Drawing.Point(591, 22);
+            this.c_ComBox1.Location = new System.Drawing.Point(656, 22);
             this.c_ComBox1.Name = "c_ComBox1";
             this.c_ComBox1.RoundingEnable = false;
             this.c_ComBox1.Size = new System.Drawing.Size(202, 39);
             this.c_ComBox1.TabIndex = 0;
             this.c_ComBox1.TextHover = null;
+            this.c_ComBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox3_KeyPress);
             // 
             // groupBox5
             // 
@@ -889,9 +918,9 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.c_ComBox2);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox5.Location = new System.Drawing.Point(130, 161);
+            this.groupBox5.Location = new System.Drawing.Point(52, 151);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(829, 80);
+            this.groupBox5.Size = new System.Drawing.Size(894, 80);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             // 
@@ -914,12 +943,13 @@
             this.c_ComBox2.Items.AddRange(new object[] {
             "Свободный",
             "Классический"});
-            this.c_ComBox2.Location = new System.Drawing.Point(591, 22);
+            this.c_ComBox2.Location = new System.Drawing.Point(656, 22);
             this.c_ComBox2.Name = "c_ComBox2";
             this.c_ComBox2.RoundingEnable = true;
             this.c_ComBox2.Size = new System.Drawing.Size(202, 39);
             this.c_ComBox2.TabIndex = 0;
             this.c_ComBox2.TextHover = null;
+            this.c_ComBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox3_KeyPress);
             // 
             // groupBox6
             // 
@@ -929,9 +959,9 @@
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.c_ComBox3);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox6.Location = new System.Drawing.Point(130, 59);
+            this.groupBox6.Location = new System.Drawing.Point(52, 51);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(829, 80);
+            this.groupBox6.Size = new System.Drawing.Size(894, 80);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
             // 
@@ -954,12 +984,13 @@
             this.c_ComBox3.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.c_ComBox3.Location = new System.Drawing.Point(591, 22);
+            this.c_ComBox3.Location = new System.Drawing.Point(656, 22);
             this.c_ComBox3.Name = "c_ComBox3";
             this.c_ComBox3.RoundingEnable = false;
             this.c_ComBox3.Size = new System.Drawing.Size(202, 39);
             this.c_ComBox3.TabIndex = 0;
             this.c_ComBox3.TextHover = null;
+            this.c_ComBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox3_KeyPress);
             // 
             // pictureBox2
             // 
@@ -968,7 +999,7 @@
             this.pictureBox2.Image = global::RguApp_Desktop.Properties.Resources.bg;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1074, 1035);
+            this.pictureBox2.Size = new System.Drawing.Size(1058, 950);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -986,7 +1017,7 @@
             this.PointPage.Location = new System.Drawing.Point(4, 25);
             this.PointPage.Name = "PointPage";
             this.PointPage.Padding = new System.Windows.Forms.Padding(3);
-            this.PointPage.Size = new System.Drawing.Size(1080, 1041);
+            this.PointPage.Size = new System.Drawing.Size(1064, 956);
             this.PointPage.TabIndex = 2;
             this.PointPage.Text = "Point";
             this.PointPage.UseVisualStyleBackColor = true;
@@ -998,9 +1029,10 @@
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::RguApp_Desktop.Properties.Resources.free_icon_turn_back_4012680_2;
-            this.pictureBox4.Location = new System.Drawing.Point(928, 968);
+            this.pictureBox4.Location = new System.Drawing.Point(859, 860);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(71, 65);
+            this.pictureBox4.Size = new System.Drawing.Size(87, 88);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 25;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
@@ -1011,11 +1043,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalcPointButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.CalcPointButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CalcPointButton.Location = new System.Drawing.Point(349, 881);
+            this.CalcPointButton.Location = new System.Drawing.Point(351, 824);
             this.CalcPointButton.Name = "CalcPointButton";
             this.CalcPointButton.Rounding = 35;
             this.CalcPointButton.RoundingEnable = true;
-            this.CalcPointButton.Size = new System.Drawing.Size(254, 81);
+            this.CalcPointButton.Size = new System.Drawing.Size(365, 81);
             this.CalcPointButton.TabIndex = 23;
             this.CalcPointButton.Text = "Рассчитать";
             this.CalcPointButton.TextHover = null;
@@ -1032,9 +1064,9 @@
             this.groupBox12.Controls.Add(this.RecSpeedTextBox);
             this.groupBox12.Controls.Add(this.label14);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox12.Location = new System.Drawing.Point(668, 484);
+            this.groupBox12.Location = new System.Drawing.Point(655, 433);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(291, 333);
+            this.groupBox12.Size = new System.Drawing.Size(291, 322);
             this.groupBox12.TabIndex = 24;
             this.groupBox12.TabStop = false;
             // 
@@ -1043,7 +1075,7 @@
             this.RezTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RezTextBox.Enabled = false;
-            this.RezTextBox.Location = new System.Drawing.Point(12, 257);
+            this.RezTextBox.Location = new System.Drawing.Point(12, 246);
             this.RezTextBox.Name = "RezTextBox";
             this.RezTextBox.Size = new System.Drawing.Size(250, 38);
             this.RezTextBox.TabIndex = 3;
@@ -1052,7 +1084,7 @@
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(61, 188);
+            this.label13.Location = new System.Drawing.Point(61, 177);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(150, 32);
             this.label13.TabIndex = 2;
@@ -1085,9 +1117,9 @@
             this.groupBox13.Controls.Add(this.PointComboBox);
             this.groupBox13.Controls.Add(this.label15);
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox13.Location = new System.Drawing.Point(130, 571);
+            this.groupBox13.Location = new System.Drawing.Point(52, 532);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(326, 76);
+            this.groupBox13.Size = new System.Drawing.Size(363, 76);
             this.groupBox13.TabIndex = 22;
             this.groupBox13.TabStop = false;
             // 
@@ -3197,13 +3229,14 @@
             "2098",
             "2099",
             "2100"});
-            this.PointComboBox.Location = new System.Drawing.Point(159, 23);
+            this.PointComboBox.Location = new System.Drawing.Point(196, 23);
             this.PointComboBox.MaxLength = 4;
             this.PointComboBox.Name = "PointComboBox";
             this.PointComboBox.RoundingEnable = false;
             this.PointComboBox.Size = new System.Drawing.Size(161, 39);
             this.PointComboBox.TabIndex = 1;
             this.PointComboBox.TextHover = null;
+            this.PointComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PointComboBox_KeyPress);
             // 
             // label15
             // 
@@ -3224,9 +3257,9 @@
             this.groupBox14.Controls.Add(this.label16);
             this.groupBox14.Controls.Add(this.DistanceComboBox);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox14.Location = new System.Drawing.Point(130, 265);
+            this.groupBox14.Location = new System.Drawing.Point(52, 252);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(829, 86);
+            this.groupBox14.Size = new System.Drawing.Size(894, 80);
             this.groupBox14.TabIndex = 21;
             this.groupBox14.TabStop = false;
             // 
@@ -3258,12 +3291,13 @@
             "30 км",
             "50 км",
             "70 км"});
-            this.DistanceComboBox.Location = new System.Drawing.Point(591, 22);
+            this.DistanceComboBox.Location = new System.Drawing.Point(656, 22);
             this.DistanceComboBox.Name = "DistanceComboBox";
             this.DistanceComboBox.RoundingEnable = false;
             this.DistanceComboBox.Size = new System.Drawing.Size(202, 39);
             this.DistanceComboBox.TabIndex = 0;
             this.DistanceComboBox.TextHover = null;
+            this.DistanceComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GenderComboBox_KeyPress);
             // 
             // groupBox15
             // 
@@ -3273,9 +3307,9 @@
             this.groupBox15.Controls.Add(this.label17);
             this.groupBox15.Controls.Add(this.StyleComboBox);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox15.Location = new System.Drawing.Point(130, 161);
+            this.groupBox15.Location = new System.Drawing.Point(52, 151);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(829, 80);
+            this.groupBox15.Size = new System.Drawing.Size(894, 80);
             this.groupBox15.TabIndex = 20;
             this.groupBox15.TabStop = false;
             // 
@@ -3298,12 +3332,13 @@
             this.StyleComboBox.Items.AddRange(new object[] {
             "Свободный",
             "Классический"});
-            this.StyleComboBox.Location = new System.Drawing.Point(591, 22);
+            this.StyleComboBox.Location = new System.Drawing.Point(656, 22);
             this.StyleComboBox.Name = "StyleComboBox";
             this.StyleComboBox.RoundingEnable = true;
             this.StyleComboBox.Size = new System.Drawing.Size(202, 39);
             this.StyleComboBox.TabIndex = 0;
             this.StyleComboBox.TextHover = null;
+            this.StyleComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GenderComboBox_KeyPress);
             // 
             // groupBox16
             // 
@@ -3313,9 +3348,9 @@
             this.groupBox16.Controls.Add(this.label18);
             this.groupBox16.Controls.Add(this.GenderComboBox);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox16.Location = new System.Drawing.Point(130, 59);
+            this.groupBox16.Location = new System.Drawing.Point(52, 51);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(829, 80);
+            this.groupBox16.Size = new System.Drawing.Size(894, 80);
             this.groupBox16.TabIndex = 19;
             this.groupBox16.TabStop = false;
             // 
@@ -3338,12 +3373,13 @@
             this.GenderComboBox.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.GenderComboBox.Location = new System.Drawing.Point(591, 22);
+            this.GenderComboBox.Location = new System.Drawing.Point(656, 22);
             this.GenderComboBox.Name = "GenderComboBox";
             this.GenderComboBox.RoundingEnable = false;
             this.GenderComboBox.Size = new System.Drawing.Size(202, 39);
             this.GenderComboBox.TabIndex = 0;
             this.GenderComboBox.TextHover = null;
+            this.GenderComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GenderComboBox_KeyPress);
             // 
             // pictureBox3
             // 
@@ -3352,17 +3388,31 @@
             this.pictureBox3.Image = global::RguApp_Desktop.Properties.Resources.bg;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1074, 1035);
+            this.pictureBox3.Size = new System.Drawing.Size(1058, 950);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox6.Image = global::RguApp_Desktop.Properties.Resources.free_icon_home_1946488__1_;
+            this.pictureBox6.Location = new System.Drawing.Point(973, 885);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(87, 88);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // PoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1088, 1070);
+            this.ClientSize = new System.Drawing.Size(1072, 985);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.tabControl1);
             this.Name = "PoForm";
             this.Text = "PoForm";
@@ -3376,6 +3426,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.RezPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -3406,6 +3457,7 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3476,5 +3528,7 @@
         private Controls.c_ComBox GenderComboBox;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
