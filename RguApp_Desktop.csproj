@@ -117,6 +117,12 @@
     <Compile Include="Controls\c_GroupBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\DoubleBufferedTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\RoundedButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controls\с_ComBox.cs">
       <SubType>Component</SubType>
     </Compile>

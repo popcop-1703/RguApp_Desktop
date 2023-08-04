@@ -17,6 +17,17 @@ namespace RguApp_Desktop
         int distance, gender, style, point;
         int Hour, Minute, Second, Millisecond;
 
+        public PoForm()
+        {
+            InitializeComponent();
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
+            //RezPageButton.FlatStyle = FlatStyle.;
+            RezPageButton.Parent = MainPage;
+        }
+
+
         private void c_ComBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar))
@@ -53,7 +64,6 @@ namespace RguApp_Desktop
         {
            //MainForm.Show();
            Close();
-
         }
 
         private void c_ComBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -74,13 +84,7 @@ namespace RguApp_Desktop
             }
         }
 
-        public PoForm()
-        {
-            InitializeComponent();
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox3.SelectedIndex = 0;
-        }
+       
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {

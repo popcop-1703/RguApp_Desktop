@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new RguApp_Desktop.Controls.c_Button();
-            this.button3 = new RguApp_Desktop.Controls.c_Button();
-            this.button1 = new RguApp_Desktop.Controls.c_Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button3 = new RguApp_Desktop.Controls.c_Button();
+            this.button2 = new RguApp_Desktop.Controls.c_Button();
+            this.button1 = new RguApp_Desktop.Controls.c_Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,24 +49,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Спортивно-технические результаты \r\nв лыжных гонках";
             // 
-            // button2
+            // pictureBox1
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(124)))), ((int)(((byte)(174)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(27, 637);
-            this.button2.Name = "button2";
-            this.button2.Rounding = 40;
-            this.button2.RoundingEnable = true;
-            this.button2.Size = new System.Drawing.Size(258, 154);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Работа с протоколом результатов";
-            this.button2.TextHover = null;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.f9d590ca_5097_4cca_b910_c48efdc8364e_PhotoRoom_png_PhotoRoom;
+            this.pictureBox1.Location = new System.Drawing.Point(781, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 208);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button3.Location = new System.Drawing.Point(331, 514);
             this.button3.Name = "button3";
@@ -79,9 +76,26 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(124)))), ((int)(((byte)(174)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(27, 637);
+            this.button2.Name = "button2";
+            this.button2.Rounding = 40;
+            this.button2.RoundingEnable = true;
+            this.button2.Size = new System.Drawing.Size(258, 154);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Работа с протоколом результатов";
+            this.button2.TextHover = null;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(229)))), ((int)(((byte)(243)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.Location = new System.Drawing.Point(27, 383);
             this.button1.Name = "button1";
@@ -93,19 +107,6 @@
             this.button1.TextHover = "Подсчет очков";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.f9d590ca_5097_4cca_b910_c48efdc8364e_PhotoRoom_png_PhotoRoom;
-            this.pictureBox1.Location = new System.Drawing.Point(755, 44);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 208);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // MainForm
             // 

@@ -84,5 +84,20 @@ namespace RguApp_Desktop.Controls
                 }
             }
         }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            if (Parent != null)
+            {
+                using (var brush = new SolidBrush(Parent.BackColor))
+                {
+                    e.Graphics.FillRectangle(brush, ClientRectangle);
+                }
+            }
+            else
+            {
+                base.OnPaintBackground(e);
+            }
+        }
     }
 }
