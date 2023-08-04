@@ -129,7 +129,7 @@
             this.tabControl1.Controls.Add(this.RezPage);
             this.tabControl1.Controls.Add(this.PointPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.ItemSize = new System.Drawing.Size(0, 1);
+            this.tabControl1.ItemSize = new System.Drawing.Size(10, 20);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -146,10 +146,10 @@
             this.MainPage.Controls.Add(this.groupBox2);
             this.MainPage.Controls.Add(this.groupBox1);
             this.MainPage.Controls.Add(this.pictureBox1);
-            this.MainPage.Location = new System.Drawing.Point(4, 5);
+            this.MainPage.Location = new System.Drawing.Point(4, 24);
             this.MainPage.Name = "MainPage";
             this.MainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MainPage.Size = new System.Drawing.Size(1064, 1117);
+            this.MainPage.Size = new System.Drawing.Size(1064, 1098);
             this.MainPage.TabIndex = 0;
             this.MainPage.Text = "Main";
             // 
@@ -161,7 +161,7 @@
             this.PointPageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PointPageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PointPageButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PointPageButton.Location = new System.Drawing.Point(257, 867);
+            this.PointPageButton.Location = new System.Drawing.Point(257, 848);
             this.PointPageButton.Name = "PointPageButton";
             this.PointPageButton.RoundingEnable = true;
             this.PointPageButton.Size = new System.Drawing.Size(506, 94);
@@ -178,7 +178,7 @@
             this.RezPageButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RezPageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RezPageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RezPageButton.Location = new System.Drawing.Point(257, 756);
+            this.RezPageButton.Location = new System.Drawing.Point(257, 737);
             this.RezPageButton.Name = "RezPageButton";
             this.RezPageButton.RoundingEnable = true;
             this.RezPageButton.Size = new System.Drawing.Size(506, 90);
@@ -327,7 +327,7 @@
             this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.bg;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1058, 1111);
+            this.pictureBox1.Size = new System.Drawing.Size(1058, 1092);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -346,10 +346,10 @@
             this.RezPage.Controls.Add(this.groupBox6);
             this.RezPage.Controls.Add(this.CalcRezButton);
             this.RezPage.Controls.Add(this.pictureBox2);
-            this.RezPage.Location = new System.Drawing.Point(4, 5);
+            this.RezPage.Location = new System.Drawing.Point(4, 24);
             this.RezPage.Name = "RezPage";
             this.RezPage.Padding = new System.Windows.Forms.Padding(3);
-            this.RezPage.Size = new System.Drawing.Size(1064, 1117);
+            this.RezPage.Size = new System.Drawing.Size(1064, 1098);
             this.RezPage.TabIndex = 1;
             this.RezPage.Text = "Rez";
             // 
@@ -360,7 +360,7 @@
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::RguApp_Desktop.Properties.Resources.free_icon_turn_back_4012680_2;
-            this.pictureBox5.Location = new System.Drawing.Point(859, 1021);
+            this.pictureBox5.Location = new System.Drawing.Point(859, 1002);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(87, 88);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -380,7 +380,7 @@
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox11.Location = new System.Drawing.Point(655, 433);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(291, 416);
+            this.groupBox11.Size = new System.Drawing.Size(291, 397);
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             // 
@@ -389,7 +389,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(12, 340);
+            this.textBox2.Location = new System.Drawing.Point(12, 321);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(250, 38);
             this.textBox2.TabIndex = 3;
@@ -398,7 +398,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 268);
+            this.label12.Location = new System.Drawing.Point(6, 249);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(253, 32);
             this.label12.TabIndex = 2;
@@ -431,7 +431,7 @@
             this.groupBox10.Controls.Add(this.c_ComBox7);
             this.groupBox10.Controls.Add(this.label10);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox10.Location = new System.Drawing.Point(52, 761);
+            this.groupBox10.Location = new System.Drawing.Point(52, 752);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(366, 76);
             this.groupBox10.TabIndex = 15;
@@ -549,6 +549,7 @@
             this.c_ComBox7.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox7.TabIndex = 1;
             this.c_ComBox7.TextHover = null;
+            this.c_ComBox7.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label10
@@ -569,7 +570,7 @@
             this.groupBox9.Controls.Add(this.c_ComBox6);
             this.groupBox9.Controls.Add(this.label9);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox9.Location = new System.Drawing.Point(52, 679);
+            this.groupBox9.Location = new System.Drawing.Point(52, 670);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(366, 76);
             this.groupBox9.TabIndex = 15;
@@ -687,6 +688,7 @@
             this.c_ComBox6.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox6.TabIndex = 1;
             this.c_ComBox6.TextHover = null;
+            this.c_ComBox6.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label9
@@ -707,7 +709,7 @@
             this.groupBox8.Controls.Add(this.c_ComBox5);
             this.groupBox8.Controls.Add(this.label8);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox8.Location = new System.Drawing.Point(52, 597);
+            this.groupBox8.Location = new System.Drawing.Point(52, 588);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(366, 76);
             this.groupBox8.TabIndex = 15;
@@ -785,6 +787,7 @@
             this.c_ComBox5.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox5.TabIndex = 1;
             this.c_ComBox5.TextHover = null;
+            this.c_ComBox5.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label8
@@ -805,7 +808,7 @@
             this.groupBox7.Controls.Add(this.c_ComBox4);
             this.groupBox7.Controls.Add(this.label7);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox7.Location = new System.Drawing.Point(52, 515);
+            this.groupBox7.Location = new System.Drawing.Point(52, 506);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(366, 76);
             this.groupBox7.TabIndex = 14;
@@ -834,6 +837,7 @@
             this.c_ComBox4.Size = new System.Drawing.Size(161, 39);
             this.c_ComBox4.TabIndex = 1;
             this.c_ComBox4.TextHover = null;
+            this.c_ComBox4.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
             // 
             // label7
@@ -895,6 +899,7 @@
             this.c_ComBox1.Size = new System.Drawing.Size(202, 39);
             this.c_ComBox1.TabIndex = 0;
             this.c_ComBox1.TextHover = null;
+            this.c_ComBox1.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox3_KeyPress);
             // 
             // groupBox5
@@ -936,6 +941,7 @@
             this.c_ComBox2.Size = new System.Drawing.Size(202, 39);
             this.c_ComBox2.TabIndex = 0;
             this.c_ComBox2.TextHover = null;
+            this.c_ComBox2.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox3_KeyPress);
             // 
             // groupBox6
@@ -977,6 +983,7 @@
             this.c_ComBox3.Size = new System.Drawing.Size(202, 39);
             this.c_ComBox3.TabIndex = 0;
             this.c_ComBox3.TextHover = null;
+            this.c_ComBox3.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox3_KeyPress);
             // 
             // CalcRezButton
@@ -985,7 +992,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalcRezButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.CalcRezButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CalcRezButton.Location = new System.Drawing.Point(343, 963);
+            this.CalcRezButton.Location = new System.Drawing.Point(343, 944);
             this.CalcRezButton.Name = "CalcRezButton";
             this.CalcRezButton.Rounding = 35;
             this.CalcRezButton.RoundingEnable = true;
@@ -1003,7 +1010,7 @@
             this.pictureBox2.Image = global::RguApp_Desktop.Properties.Resources.bg;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1058, 1111);
+            this.pictureBox2.Size = new System.Drawing.Size(1058, 1092);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -1019,10 +1026,10 @@
             this.PointPage.Controls.Add(this.groupBox16);
             this.PointPage.Controls.Add(this.CalcPointButton);
             this.PointPage.Controls.Add(this.pictureBox3);
-            this.PointPage.Location = new System.Drawing.Point(4, 14);
+            this.PointPage.Location = new System.Drawing.Point(4, 24);
             this.PointPage.Name = "PointPage";
             this.PointPage.Padding = new System.Windows.Forms.Padding(3);
-            this.PointPage.Size = new System.Drawing.Size(1064, 1108);
+            this.PointPage.Size = new System.Drawing.Size(1064, 1098);
             this.PointPage.TabIndex = 2;
             this.PointPage.Text = "Point";
             // 
@@ -3223,6 +3230,8 @@
             this.PointComboBox.Size = new System.Drawing.Size(161, 39);
             this.PointComboBox.TabIndex = 1;
             this.PointComboBox.TextHover = null;
+            this.PointComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
+            this.PointComboBox.TextUpdate += new System.EventHandler(this.PointComboBox_TextUpdate);
             this.PointComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PointComboBox_KeyPress);
             // 
             // label15
@@ -3284,6 +3293,7 @@
             this.DistanceComboBox.Size = new System.Drawing.Size(202, 39);
             this.DistanceComboBox.TabIndex = 0;
             this.DistanceComboBox.TextHover = null;
+            this.DistanceComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
             this.DistanceComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GenderComboBox_KeyPress);
             // 
             // groupBox15
@@ -3325,6 +3335,7 @@
             this.StyleComboBox.Size = new System.Drawing.Size(202, 39);
             this.StyleComboBox.TabIndex = 0;
             this.StyleComboBox.TextHover = null;
+            this.StyleComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
             this.StyleComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GenderComboBox_KeyPress);
             // 
             // groupBox16
@@ -3366,6 +3377,7 @@
             this.GenderComboBox.Size = new System.Drawing.Size(202, 39);
             this.GenderComboBox.TabIndex = 0;
             this.GenderComboBox.TextHover = null;
+            this.GenderComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
             this.GenderComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GenderComboBox_KeyPress);
             // 
             // CalcPointButton
@@ -3392,7 +3404,7 @@
             this.pictureBox3.Image = global::RguApp_Desktop.Properties.Resources.bg;
             this.pictureBox3.Location = new System.Drawing.Point(3, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1058, 1102);
+            this.pictureBox3.Size = new System.Drawing.Size(1058, 1092);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;

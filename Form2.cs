@@ -16,6 +16,7 @@ namespace RguApp_Desktop
         private string gender_text, style_text = "";
         private int distance, gender, style, point = 0;
         public double a, b, c, d, speed, Final_count, speed_2 = 0;
+        public static bool markerTime = false;
 
         public double time;
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
@@ -86,7 +87,7 @@ namespace RguApp_Desktop
         private void construct_table()
         {
             clear_data();
-
+            markerTime = false;
             int o = 1;
             point = 1;
             gender = toolStripComboBox2.SelectedIndex + 1;
@@ -111,8 +112,11 @@ namespace RguApp_Desktop
                 dataGridView1.Rows.Add();
                 while (o <= 11)
                 {
+                    
                     string headerText = dataGridView1.Columns[o].HeaderText;
                     distance = Convert.ToInt32(headerText);
+                    if (distance >= 3000)
+                        markerTime = true;
                     GetCoef();
                     speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
                     time = (double)(Convert.ToInt32(headerText) / speed);
@@ -124,6 +128,22 @@ namespace RguApp_Desktop
                 o++;
                 point++;
             }
+            columnsTextChange();
+        }
+         
+        private void columnsTextChange()
+        {
+            dataGridView1.Columns[1].HeaderText = "1 км";
+            dataGridView1.Columns[2].HeaderText = "2 км";
+            dataGridView1.Columns[3].HeaderText = "3 км";
+            dataGridView1.Columns[4].HeaderText = "5 км";
+            dataGridView1.Columns[5].HeaderText = "7.5 км";
+            dataGridView1.Columns[6].HeaderText = "10 км";
+            dataGridView1.Columns[7].HeaderText = "15 км";
+            dataGridView1.Columns[8].HeaderText = "20 км";
+            dataGridView1.Columns[9].HeaderText = "30 км";
+            dataGridView1.Columns[10].HeaderText = "50 км";
+            dataGridView1.Columns[11].HeaderText = "70 км";
         }
 
         private void construct_table_speed()
@@ -131,6 +151,7 @@ namespace RguApp_Desktop
             clear_data();
             int o = 1;
             point = 1;
+            markerTime = false;
             gender = toolStripComboBox2.SelectedIndex + 1;
             style = toolStripComboBox3.SelectedIndex + 1;
 
@@ -155,15 +176,18 @@ namespace RguApp_Desktop
                 {
                     string headerText = dataGridView1.Columns[o].HeaderText;
                     distance = Convert.ToInt32(headerText);
+                    if (distance >= 3000)
+                        markerTime = true;
                     GetCoef();
                     speed = a * Math.Pow(point, 3) + b * Math.Pow(point, 2) + c * point + d;
-                    dataGridView1.Rows[point - 1].Cells[o].Value = Math.Round(speed, 2) + " М/C";
+                    dataGridView1.Rows[point - 1].Cells[o].Value = Math.Round(speed, 2) + " м/c";
                     o++;
                 }
 
                 dataGridView1.Rows[point - 1].Cells[0].Value = point;
                 point++;
             }
+            columnsTextChange();
         }
 
         private static String timeToString(double time)
@@ -173,7 +197,11 @@ namespace RguApp_Desktop
                     sec = Math.Floor(time / 1 % 60),
                     mil = Math.Round(time % 60 - Math.Floor(time % 60), 3),
                     sec2 = sec + mil;
-            return hour.ToString("00") + ":" + min.ToString("00") + ":" + sec2.ToString("00.00");
+
+            if( markerTime != true)
+                return hour.ToString("00") + ":" + min.ToString("00") + ":" + sec2.ToString("00.00");
+            else
+                return hour.ToString("00") + ":" + min.ToString("00") + ":" + sec2.ToString("00.0");
         }
 
         private void dataGridView1_CellLeave(object sender, DataGridViewCellEventArgs e)

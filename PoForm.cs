@@ -16,6 +16,7 @@ namespace RguApp_Desktop
         double a, b, c, d, speed, Final_count, speed_2, time;
         int distance, gender, style, point;
         int Hour, Minute, Second, Millisecond;
+        public static bool markerRez = false, markerPoint = false;
 
         public PoForm()
         {
@@ -52,6 +53,13 @@ namespace RguApp_Desktop
             }
         }
 
+        //RezButton
+        private void c_ComBox3_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if(markerRez == true)
+                RezBut();
+        }
+
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar))
@@ -60,10 +68,22 @@ namespace RguApp_Desktop
             }
         }
 
+        private void GenderComboBox_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (markerPoint == true)
+                PointBut();
+        }
+
         private void pictureBox6_Click(object sender, EventArgs e)
         {
            //MainForm.Show();
            Close();
+        }
+
+        private void PointComboBox_TextUpdate(object sender, EventArgs e)
+        {
+            if (markerPoint == true)
+                PointBut();
         }
 
         private void c_ComBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -83,8 +103,6 @@ namespace RguApp_Desktop
                 comboBox3.SelectedIndex = DataBase.po_Distance;
             }
         }
-
-       
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -126,14 +144,14 @@ namespace RguApp_Desktop
             DistanceComboBox.SelectedIndex = DataBase.po_Distance;
         }
 
-        private void CalcPointButton_Click(object sender, EventArgs e)
+        private void PointBut()
         {
             textBox1.Text = "";
             textBox2.Text = "";
             GetDataPoint();
             GetCoef();
 
-            if(PointComboBox.Text == string.Empty)
+            if (PointComboBox.Text == string.Empty)
                 point = 0;
             else
                 point = Convert.ToInt32(PointComboBox.Text);
@@ -158,8 +176,13 @@ namespace RguApp_Desktop
                 MessageBox.Show("Введите целочисленное значение от 0 до 2100", "Ошибка");
             }
         }
+        private void CalcPointButton_Click(object sender, EventArgs e)
+        {
+            PointBut();
+            markerPoint = true;
+        }
 
-        private void CalcRezButton_Click(object sender, EventArgs e)
+        private void RezBut()
         {
             textBox1.Text = "";
             textBox2.Text = "";
@@ -171,17 +194,17 @@ namespace RguApp_Desktop
             else
                 Hour = Convert.ToInt32(c_ComBox4.Text);
 
-            if(c_ComBox5.Text == string.Empty)
+            if (c_ComBox5.Text == string.Empty)
                 Minute = 0;
             else
                 Minute = Convert.ToInt32(c_ComBox5.Text);
 
-            if(c_ComBox6.Text == string.Empty)
+            if (c_ComBox6.Text == string.Empty)
                 Second = 0;
             else
                 Second = Convert.ToInt32(c_ComBox6.Text);
 
-            if(c_ComBox7.Text == string.Empty)
+            if (c_ComBox7.Text == string.Empty)
                 Millisecond = 0;
             else
                 Millisecond = Convert.ToInt32(c_ComBox7.Text);
@@ -230,6 +253,12 @@ namespace RguApp_Desktop
             {
                 MessageBox.Show("Результат не входит в очковый диапазон", "Ошибка");
             }
+
+        }
+        private void CalcRezButton_Click(object sender, EventArgs e)
+        {
+            RezBut();
+            markerRez = true;
         }
 
         private static String timeToString(double time)
