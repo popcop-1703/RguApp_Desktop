@@ -53,16 +53,7 @@ namespace RguApp_Desktop
             }
         }
 
-        //RezButton
-        private void c_ComBox3_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            if(markerRez == true) {
-                textBox1.Text = "";
-                textBox2.Text = "";
-                RezBut();
-            }
-            
-        }
+        
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -93,6 +84,49 @@ namespace RguApp_Desktop
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void c_ComBox4_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (markerRez == true)
+            {
+                c_ComBox4.Text = c_ComBox4.SelectedItem.ToString();
+                textBox1.Text = null;
+                textBox2.Text = null;
+                RezBut();
+            }
+        }
+
+        private void c_ComBox5_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (markerRez == true)
+            {
+                c_ComBox5.Text = c_ComBox5.SelectedItem.ToString();
+                textBox1.Text = null;
+                textBox2.Text = null;
+                RezBut();
+            }
+        }
+
+        private void c_ComBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (markerRez == true)
+            {
+                c_ComBox6.Text = c_ComBox6.SelectedItem.ToString();
+                textBox1.Text = null;
+                textBox2.Text = null;
+                RezBut();
+            }
+        }
+
+        private void c_ComBox7_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if(markerRez == true) {
+                c_ComBox7.Text = c_ComBox7.SelectedItem.ToString();
+                textBox1.Text = null;
+                textBox2.Text = null;
+                RezBut();
+            }
         }
 
         private void c_ComBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -193,12 +227,12 @@ namespace RguApp_Desktop
 
         private void RezBut()
         {
-            textBox1.Text = "";
-            textBox2.Text = "";
+            textBox1.Text = null;
+            textBox2.Text = null;
             GetDataRez();
             GetCoef();
 
-            if (c_ComBox4.Text == string.Empty)
+            if (c_ComBox4.Text == string.Empty) 
                 Hour = 0;
             else
                 Hour = Convert.ToInt32(c_ComBox4.Text);
@@ -256,6 +290,8 @@ namespace RguApp_Desktop
                 else
                 {
                     MessageBox.Show("Результат не является реалистичным", "Ошибка");
+                    textBox1.Text = null;
+                    textBox2.Text = null;
                 }
             }
             else
