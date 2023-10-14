@@ -15,7 +15,7 @@ namespace RguApp_Desktop
 {
     public partial class MainForm : Form
     {
-        Form2 newForm2 = new Form2();
+        //TableForm newForm2 = new TableForm();
 
         public MainForm()
         {
@@ -34,14 +34,18 @@ namespace RguApp_Desktop
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            DataBase.flagTable = false;
+            TableForm newForm2 = new TableForm();
             DataBase.transition = 0;
             //GetRadio();
             newForm2.Owner = this;
-            newForm2.Show();
+            newForm2.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            DataBase.flagTable = true;
+            TableForm newForm2 = new TableForm();
             //GetRadio();
             //DataBase.gender = 1;
             //DataBase.style = 1;

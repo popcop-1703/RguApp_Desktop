@@ -9,7 +9,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace RguApp_Desktop
 {
-    public partial class Form2 : Form
+    public partial class TableForm : Form
     {
 
         private string fileName = string.Empty;
@@ -20,7 +20,7 @@ namespace RguApp_Desktop
 
         public double time;
         public int Hour_int, Minute_int, Second_int, Millisecond_int = 0;
-        public Form2()
+        public TableForm()
         {
             InitializeComponent();
             //Form1 frm = (Form1)this.Owner;
@@ -40,11 +40,24 @@ namespace RguApp_Desktop
             clear_data();
             if (DataBase.transition == 1)
             {
-                
                 toolStripComboBox1.Items.Add("Времени");
                 toolStripComboBox1.Items.Add("Скорости");
                 toolStripComboBox1.SelectedIndex = 0;
                 construct_table();
+            }
+            if(DataBase.flagTable == true)
+            {
+                обработкаToolStripMenuItem.Enabled = false;
+                создатьToolStripMenuItem.Enabled = false;
+                открытьToolStripMenuItem.Enabled = false;
+                toolStrip1.Enabled = true;
+            }
+            else if(DataBase.flagTable == false)
+            {
+                обработкаToolStripMenuItem.Enabled = true;
+                создатьToolStripMenuItem.Enabled = true;
+                открытьToolStripMenuItem.Enabled = true;
+                toolStrip1.Enabled = false;
             }
         }
 
@@ -271,7 +284,7 @@ namespace RguApp_Desktop
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         public double scale = Math.Pow(10, 2);

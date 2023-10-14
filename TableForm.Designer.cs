@@ -1,6 +1,6 @@
 ﻿namespace RguApp_Desktop
 {
-    partial class Form2
+    partial class TableForm
     {
         /// <summary>
         /// Required designer variable.
