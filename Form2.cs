@@ -23,7 +23,7 @@ namespace RguApp_Desktop
         public Form2()
         {
             InitializeComponent();
-            Form1 frm = (Form1)this.Owner;
+            //Form1 frm = (Form1)this.Owner;
         }
 
         private void данныеПоОчкамToolStripMenuItem_Click(object sender, EventArgs e)

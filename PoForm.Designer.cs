@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MainPage = new System.Windows.Forms.TabPage();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.PointPageButton = new RguApp_Desktop.Controls.c_Button();
             this.RezPageButton = new RguApp_Desktop.Controls.c_Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -43,6 +44,7 @@
             this.comboBox1 = new RguApp_Desktop.Controls.c_ComBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.RezPage = new System.Windows.Forms.TabPage();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -56,8 +58,8 @@
             this.c_ComBox6 = new RguApp_Desktop.Controls.c_ComBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.c_ComBox5 = new RguApp_Desktop.Controls.c_ComBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.c_ComBox5 = new RguApp_Desktop.Controls.c_ComBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.c_ComBox4 = new RguApp_Desktop.Controls.c_ComBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -93,14 +95,16 @@
             this.GenderComboBox = new RguApp_Desktop.Controls.c_ComBox();
             this.CalcPointButton = new RguApp_Desktop.Controls.c_Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.MainPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.RezPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -119,7 +123,7 @@
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -131,15 +135,17 @@
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ItemSize = new System.Drawing.Size(10, 20);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1072, 1126);
+            this.tabControl1.Size = new System.Drawing.Size(804, 862);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // MainPage
             // 
             this.MainPage.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.MainPage.Controls.Add(this.pictureBox6);
             this.MainPage.Controls.Add(this.PointPageButton);
             this.MainPage.Controls.Add(this.RezPageButton);
             this.MainPage.Controls.Add(this.groupBox3);
@@ -147,11 +153,27 @@
             this.MainPage.Controls.Add(this.groupBox1);
             this.MainPage.Controls.Add(this.pictureBox1);
             this.MainPage.Location = new System.Drawing.Point(4, 24);
+            this.MainPage.Margin = new System.Windows.Forms.Padding(2);
             this.MainPage.Name = "MainPage";
-            this.MainPage.Padding = new System.Windows.Forms.Padding(3);
-            this.MainPage.Size = new System.Drawing.Size(1064, 1098);
+            this.MainPage.Padding = new System.Windows.Forms.Padding(2);
+            this.MainPage.Size = new System.Drawing.Size(796, 834);
             this.MainPage.TabIndex = 0;
             this.MainPage.Text = "Main";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox6.Image = global::RguApp_Desktop.Properties.Resources.free_icon_home_1946488__1_;
+            this.pictureBox6.Location = new System.Drawing.Point(724, 755);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(65, 72);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 1;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // PointPageButton
             // 
@@ -161,10 +183,11 @@
             this.PointPageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PointPageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PointPageButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.PointPageButton.Location = new System.Drawing.Point(257, 848);
+            this.PointPageButton.Location = new System.Drawing.Point(193, 636);
+            this.PointPageButton.Margin = new System.Windows.Forms.Padding(2);
             this.PointPageButton.Name = "PointPageButton";
             this.PointPageButton.RoundingEnable = true;
-            this.PointPageButton.Size = new System.Drawing.Size(506, 94);
+            this.PointPageButton.Size = new System.Drawing.Size(380, 76);
             this.PointPageButton.TabIndex = 11;
             this.PointPageButton.Text = "Очки";
             this.PointPageButton.TextHover = null;
@@ -178,10 +201,11 @@
             this.RezPageButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.RezPageButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RezPageButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.RezPageButton.Location = new System.Drawing.Point(257, 737);
+            this.RezPageButton.Location = new System.Drawing.Point(193, 546);
+            this.RezPageButton.Margin = new System.Windows.Forms.Padding(2);
             this.RezPageButton.Name = "RezPageButton";
             this.RezPageButton.RoundingEnable = true;
-            this.RezPageButton.Size = new System.Drawing.Size(506, 90);
+            this.RezPageButton.Size = new System.Drawing.Size(380, 73);
             this.RezPageButton.TabIndex = 10;
             this.RezPageButton.Text = "Результат";
             this.RezPageButton.TextHover = null;
@@ -196,9 +220,11 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.comboBox3);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox3.Location = new System.Drawing.Point(52, 252);
+            this.groupBox3.Location = new System.Drawing.Point(39, 205);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(894, 80);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(670, 65);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             // 
@@ -207,9 +233,10 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 22);
+            this.label3.Location = new System.Drawing.Point(5, 18);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 32);
+            this.label3.Size = new System.Drawing.Size(123, 26);
             this.label3.TabIndex = 1;
             this.label3.Text = "Дистанция";
             // 
@@ -230,10 +257,11 @@
             "30 км",
             "50 км",
             "70 км"});
-            this.comboBox3.Location = new System.Drawing.Point(656, 22);
+            this.comboBox3.Location = new System.Drawing.Point(492, 18);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.RoundingEnable = false;
-            this.comboBox3.Size = new System.Drawing.Size(202, 39);
+            this.comboBox3.Size = new System.Drawing.Size(152, 34);
             this.comboBox3.TabIndex = 0;
             this.comboBox3.TextHover = null;
             this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
@@ -246,9 +274,11 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(52, 151);
+            this.groupBox2.Location = new System.Drawing.Point(39, 123);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(894, 80);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(670, 65);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             // 
@@ -257,9 +287,10 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 22);
+            this.label2.Location = new System.Drawing.Point(5, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 32);
+            this.label2.Size = new System.Drawing.Size(75, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Стиль";
             // 
@@ -271,10 +302,11 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Свободный",
             "Классический"});
-            this.comboBox2.Location = new System.Drawing.Point(656, 22);
+            this.comboBox2.Location = new System.Drawing.Point(492, 18);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.RoundingEnable = true;
-            this.comboBox2.Size = new System.Drawing.Size(202, 39);
+            this.comboBox2.Size = new System.Drawing.Size(152, 34);
             this.comboBox2.TabIndex = 0;
             this.comboBox2.TextHover = null;
             this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
@@ -287,9 +319,11 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox1.Location = new System.Drawing.Point(52, 51);
+            this.groupBox1.Location = new System.Drawing.Point(39, 41);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(894, 80);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(670, 65);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
@@ -298,9 +332,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 22);
+            this.label1.Location = new System.Drawing.Point(5, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 32);
+            this.label1.Size = new System.Drawing.Size(53, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "Пол";
             // 
@@ -312,10 +347,11 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.comboBox1.Location = new System.Drawing.Point(656, 22);
+            this.comboBox1.Location = new System.Drawing.Point(492, 18);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.RoundingEnable = false;
-            this.comboBox1.Size = new System.Drawing.Size(202, 39);
+            this.comboBox1.Size = new System.Drawing.Size(152, 34);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.TextHover = null;
             this.comboBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBox1_KeyPress);
@@ -325,9 +361,10 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::RguApp_Desktop.Properties.Resources.bg;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1058, 1092);
+            this.pictureBox1.Size = new System.Drawing.Size(792, 830);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -335,6 +372,7 @@
             // RezPage
             // 
             this.RezPage.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.RezPage.Controls.Add(this.pictureBox7);
             this.RezPage.Controls.Add(this.pictureBox5);
             this.RezPage.Controls.Add(this.groupBox11);
             this.RezPage.Controls.Add(this.groupBox10);
@@ -347,11 +385,27 @@
             this.RezPage.Controls.Add(this.CalcRezButton);
             this.RezPage.Controls.Add(this.pictureBox2);
             this.RezPage.Location = new System.Drawing.Point(4, 24);
+            this.RezPage.Margin = new System.Windows.Forms.Padding(2);
             this.RezPage.Name = "RezPage";
-            this.RezPage.Padding = new System.Windows.Forms.Padding(3);
-            this.RezPage.Size = new System.Drawing.Size(1064, 1098);
+            this.RezPage.Padding = new System.Windows.Forms.Padding(2);
+            this.RezPage.Size = new System.Drawing.Size(796, 834);
             this.RezPage.TabIndex = 1;
             this.RezPage.Text = "Rez";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::RguApp_Desktop.Properties.Resources.free_icon_home_1946488__1_;
+            this.pictureBox7.Location = new System.Drawing.Point(724, 761);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(65, 72);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 27;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox5
             // 
@@ -360,9 +414,10 @@
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox5.Image = global::RguApp_Desktop.Properties.Resources.free_icon_turn_back_4012680_2;
-            this.pictureBox5.Location = new System.Drawing.Point(859, 1002);
+            this.pictureBox5.Location = new System.Drawing.Point(644, 761);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(87, 88);
+            this.pictureBox5.Size = new System.Drawing.Size(65, 72);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 26;
             this.pictureBox5.TabStop = false;
@@ -378,9 +433,11 @@
             this.groupBox11.Controls.Add(this.textBox1);
             this.groupBox11.Controls.Add(this.label11);
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox11.Location = new System.Drawing.Point(655, 433);
+            this.groupBox11.Location = new System.Drawing.Point(491, 352);
+            this.groupBox11.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(291, 397);
+            this.groupBox11.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox11.Size = new System.Drawing.Size(218, 270);
             this.groupBox11.TabIndex = 17;
             this.groupBox11.TabStop = false;
             // 
@@ -389,18 +446,20 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(12, 321);
+            this.textBox2.Location = new System.Drawing.Point(9, 208);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 38);
+            this.textBox2.Size = new System.Drawing.Size(188, 32);
             this.textBox2.TabIndex = 3;
             // 
             // label12
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 249);
+            this.label12.Location = new System.Drawing.Point(4, 149);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(253, 32);
+            this.label12.Size = new System.Drawing.Size(198, 26);
             this.label12.TabIndex = 2;
             this.label12.Text = "Количество очков";
             // 
@@ -409,18 +468,20 @@
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(11, 99);
+            this.textBox1.Location = new System.Drawing.Point(8, 80);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(250, 38);
+            this.textBox1.Size = new System.Drawing.Size(188, 32);
             this.textBox1.TabIndex = 1;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(6, 18);
+            this.label11.Location = new System.Drawing.Point(4, 15);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(270, 58);
+            this.label11.Size = new System.Drawing.Size(218, 48);
             this.label11.TabIndex = 0;
             this.label11.Text = "Среднедистанционная\r\nскорость";
             // 
@@ -431,9 +492,11 @@
             this.groupBox10.Controls.Add(this.c_ComBox7);
             this.groupBox10.Controls.Add(this.label10);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox10.Location = new System.Drawing.Point(52, 752);
+            this.groupBox10.Location = new System.Drawing.Point(39, 585);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(366, 76);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox10.Size = new System.Drawing.Size(274, 62);
             this.groupBox10.TabIndex = 15;
             this.groupBox10.TabStop = false;
             // 
@@ -443,6 +506,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.c_ComBox7.FormattingEnabled = true;
             this.c_ComBox7.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",
@@ -542,11 +606,12 @@
             "97",
             "98",
             "99"});
-            this.c_ComBox7.Location = new System.Drawing.Point(199, 23);
+            this.c_ComBox7.Location = new System.Drawing.Point(149, 19);
+            this.c_ComBox7.Margin = new System.Windows.Forms.Padding(2);
             this.c_ComBox7.MaxLength = 2;
             this.c_ComBox7.Name = "c_ComBox7";
             this.c_ComBox7.RoundingEnable = false;
-            this.c_ComBox7.Size = new System.Drawing.Size(161, 39);
+            this.c_ComBox7.Size = new System.Drawing.Size(122, 34);
             this.c_ComBox7.TabIndex = 1;
             this.c_ComBox7.TextHover = null;
             this.c_ComBox7.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
@@ -557,11 +622,12 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 23);
+            this.label10.Location = new System.Drawing.Point(4, 19);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(130, 32);
+            this.label10.Size = new System.Drawing.Size(78, 26);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Десятые";
+            this.label10.Text = "Сотые";
             // 
             // groupBox9
             // 
@@ -570,9 +636,11 @@
             this.groupBox9.Controls.Add(this.c_ComBox6);
             this.groupBox9.Controls.Add(this.label9);
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox9.Location = new System.Drawing.Point(52, 670);
+            this.groupBox9.Location = new System.Drawing.Point(39, 518);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(366, 76);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox9.Size = new System.Drawing.Size(274, 62);
             this.groupBox9.TabIndex = 15;
             this.groupBox9.TabStop = false;
             // 
@@ -582,6 +650,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.c_ComBox6.FormattingEnabled = true;
             this.c_ComBox6.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",
@@ -681,11 +750,12 @@
             "97",
             "98",
             "99"});
-            this.c_ComBox6.Location = new System.Drawing.Point(199, 23);
+            this.c_ComBox6.Location = new System.Drawing.Point(149, 19);
+            this.c_ComBox6.Margin = new System.Windows.Forms.Padding(2);
             this.c_ComBox6.MaxLength = 2;
             this.c_ComBox6.Name = "c_ComBox6";
             this.c_ComBox6.RoundingEnable = false;
-            this.c_ComBox6.Size = new System.Drawing.Size(161, 39);
+            this.c_ComBox6.Size = new System.Drawing.Size(122, 34);
             this.c_ComBox6.TabIndex = 1;
             this.c_ComBox6.TextHover = null;
             this.c_ComBox6.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
@@ -696,9 +766,10 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 23);
+            this.label9.Location = new System.Drawing.Point(4, 19);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 32);
+            this.label9.Size = new System.Drawing.Size(103, 26);
             this.label9.TabIndex = 0;
             this.label9.Text = "Секунды";
             // 
@@ -706,14 +777,28 @@
             // 
             this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox8.Controls.Add(this.c_ComBox5);
             this.groupBox8.Controls.Add(this.label8);
+            this.groupBox8.Controls.Add(this.c_ComBox5);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox8.Location = new System.Drawing.Point(52, 588);
+            this.groupBox8.Location = new System.Drawing.Point(39, 452);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(366, 76);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox8.Size = new System.Drawing.Size(274, 62);
             this.groupBox8.TabIndex = 15;
             this.groupBox8.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 19);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 26);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Минуты";
             // 
             // c_ComBox5
             // 
@@ -721,6 +806,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.c_ComBox5.FormattingEnabled = true;
             this.c_ComBox5.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",
@@ -780,26 +866,16 @@
             "57",
             "58",
             "59"});
-            this.c_ComBox5.Location = new System.Drawing.Point(199, 23);
+            this.c_ComBox5.Location = new System.Drawing.Point(149, 19);
+            this.c_ComBox5.Margin = new System.Windows.Forms.Padding(2);
             this.c_ComBox5.MaxLength = 2;
             this.c_ComBox5.Name = "c_ComBox5";
             this.c_ComBox5.RoundingEnable = false;
-            this.c_ComBox5.Size = new System.Drawing.Size(161, 39);
+            this.c_ComBox5.Size = new System.Drawing.Size(122, 34);
             this.c_ComBox5.TabIndex = 1;
             this.c_ComBox5.TextHover = null;
             this.c_ComBox5.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
             this.c_ComBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.c_ComBox4_KeyPress);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 32);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Минуты";
             // 
             // groupBox7
             // 
@@ -808,9 +884,11 @@
             this.groupBox7.Controls.Add(this.c_ComBox4);
             this.groupBox7.Controls.Add(this.label7);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox7.Location = new System.Drawing.Point(52, 506);
+            this.groupBox7.Location = new System.Drawing.Point(39, 385);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(366, 76);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox7.Size = new System.Drawing.Size(274, 62);
             this.groupBox7.TabIndex = 14;
             this.groupBox7.TabStop = false;
             // 
@@ -820,6 +898,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.c_ComBox4.FormattingEnabled = true;
             this.c_ComBox4.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",
@@ -830,11 +909,12 @@
             "8",
             "9",
             "10"});
-            this.c_ComBox4.Location = new System.Drawing.Point(199, 23);
+            this.c_ComBox4.Location = new System.Drawing.Point(149, 19);
+            this.c_ComBox4.Margin = new System.Windows.Forms.Padding(2);
             this.c_ComBox4.MaxLength = 2;
             this.c_ComBox4.Name = "c_ComBox4";
             this.c_ComBox4.RoundingEnable = false;
-            this.c_ComBox4.Size = new System.Drawing.Size(161, 39);
+            this.c_ComBox4.Size = new System.Drawing.Size(122, 34);
             this.c_ComBox4.TabIndex = 1;
             this.c_ComBox4.TextHover = null;
             this.c_ComBox4.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
@@ -845,9 +925,10 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 23);
+            this.label7.Location = new System.Drawing.Point(4, 19);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 32);
+            this.label7.Size = new System.Drawing.Size(66, 26);
             this.label7.TabIndex = 0;
             this.label7.Text = "Часы";
             // 
@@ -859,9 +940,11 @@
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.c_ComBox1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox4.Location = new System.Drawing.Point(52, 252);
+            this.groupBox4.Location = new System.Drawing.Point(39, 205);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(894, 80);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox4.Size = new System.Drawing.Size(670, 65);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             // 
@@ -870,9 +953,10 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 22);
+            this.label4.Location = new System.Drawing.Point(5, 18);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(158, 32);
+            this.label4.Size = new System.Drawing.Size(123, 26);
             this.label4.TabIndex = 1;
             this.label4.Text = "Дистанция";
             // 
@@ -893,10 +977,11 @@
             "30 км",
             "50 км",
             "70 км"});
-            this.c_ComBox1.Location = new System.Drawing.Point(656, 22);
+            this.c_ComBox1.Location = new System.Drawing.Point(492, 18);
+            this.c_ComBox1.Margin = new System.Windows.Forms.Padding(2);
             this.c_ComBox1.Name = "c_ComBox1";
             this.c_ComBox1.RoundingEnable = false;
-            this.c_ComBox1.Size = new System.Drawing.Size(202, 39);
+            this.c_ComBox1.Size = new System.Drawing.Size(152, 34);
             this.c_ComBox1.TabIndex = 0;
             this.c_ComBox1.TextHover = null;
             this.c_ComBox1.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
@@ -910,9 +995,11 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.c_ComBox2);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox5.Location = new System.Drawing.Point(52, 151);
+            this.groupBox5.Location = new System.Drawing.Point(39, 123);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(894, 80);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox5.Size = new System.Drawing.Size(670, 65);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
             // 
@@ -921,9 +1008,10 @@
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 22);
+            this.label5.Location = new System.Drawing.Point(5, 18);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 32);
+            this.label5.Size = new System.Drawing.Size(75, 26);
             this.label5.TabIndex = 1;
             this.label5.Text = "Стиль";
             // 
@@ -935,10 +1023,11 @@
             this.c_ComBox2.Items.AddRange(new object[] {
             "Свободный",
             "Классический"});
-            this.c_ComBox2.Location = new System.Drawing.Point(656, 22);
+            this.c_ComBox2.Location = new System.Drawing.Point(492, 18);
+            this.c_ComBox2.Margin = new System.Windows.Forms.Padding(2);
             this.c_ComBox2.Name = "c_ComBox2";
             this.c_ComBox2.RoundingEnable = true;
-            this.c_ComBox2.Size = new System.Drawing.Size(202, 39);
+            this.c_ComBox2.Size = new System.Drawing.Size(152, 34);
             this.c_ComBox2.TabIndex = 0;
             this.c_ComBox2.TextHover = null;
             this.c_ComBox2.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
@@ -952,9 +1041,11 @@
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.c_ComBox3);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox6.Location = new System.Drawing.Point(52, 51);
+            this.groupBox6.Location = new System.Drawing.Point(39, 41);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(894, 80);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox6.Size = new System.Drawing.Size(670, 65);
             this.groupBox6.TabIndex = 11;
             this.groupBox6.TabStop = false;
             // 
@@ -963,9 +1054,10 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 22);
+            this.label6.Location = new System.Drawing.Point(5, 18);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 32);
+            this.label6.Size = new System.Drawing.Size(53, 26);
             this.label6.TabIndex = 1;
             this.label6.Text = "Пол";
             // 
@@ -977,10 +1069,11 @@
             this.c_ComBox3.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.c_ComBox3.Location = new System.Drawing.Point(656, 22);
+            this.c_ComBox3.Location = new System.Drawing.Point(492, 18);
+            this.c_ComBox3.Margin = new System.Windows.Forms.Padding(2);
             this.c_ComBox3.Name = "c_ComBox3";
             this.c_ComBox3.RoundingEnable = false;
-            this.c_ComBox3.Size = new System.Drawing.Size(202, 39);
+            this.c_ComBox3.Size = new System.Drawing.Size(152, 34);
             this.c_ComBox3.TabIndex = 0;
             this.c_ComBox3.TextHover = null;
             this.c_ComBox3.SelectionChangeCommitted += new System.EventHandler(this.c_ComBox3_SelectionChangeCommitted);
@@ -992,11 +1085,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalcRezButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.CalcRezButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CalcRezButton.Location = new System.Drawing.Point(343, 944);
+            this.CalcRezButton.Location = new System.Drawing.Point(257, 714);
+            this.CalcRezButton.Margin = new System.Windows.Forms.Padding(2);
             this.CalcRezButton.Name = "CalcRezButton";
             this.CalcRezButton.Rounding = 35;
             this.CalcRezButton.RoundingEnable = true;
-            this.CalcRezButton.Size = new System.Drawing.Size(365, 81);
+            this.CalcRezButton.Size = new System.Drawing.Size(274, 66);
             this.CalcRezButton.TabIndex = 16;
             this.CalcRezButton.Text = "Рассчитать";
             this.CalcRezButton.TextHover = null;
@@ -1008,9 +1102,10 @@
             this.pictureBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = global::RguApp_Desktop.Properties.Resources.bg;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1058, 1092);
+            this.pictureBox2.Size = new System.Drawing.Size(792, 830);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -1018,6 +1113,7 @@
             // PointPage
             // 
             this.PointPage.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.PointPage.Controls.Add(this.pictureBox8);
             this.PointPage.Controls.Add(this.pictureBox4);
             this.PointPage.Controls.Add(this.groupBox12);
             this.PointPage.Controls.Add(this.groupBox13);
@@ -1027,9 +1123,10 @@
             this.PointPage.Controls.Add(this.CalcPointButton);
             this.PointPage.Controls.Add(this.pictureBox3);
             this.PointPage.Location = new System.Drawing.Point(4, 24);
+            this.PointPage.Margin = new System.Windows.Forms.Padding(2);
             this.PointPage.Name = "PointPage";
-            this.PointPage.Padding = new System.Windows.Forms.Padding(3);
-            this.PointPage.Size = new System.Drawing.Size(1064, 1098);
+            this.PointPage.Padding = new System.Windows.Forms.Padding(2);
+            this.PointPage.Size = new System.Drawing.Size(796, 834);
             this.PointPage.TabIndex = 2;
             this.PointPage.Text = "Point";
             // 
@@ -1040,9 +1137,10 @@
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::RguApp_Desktop.Properties.Resources.free_icon_turn_back_4012680_2;
-            this.pictureBox4.Location = new System.Drawing.Point(859, 1012);
+            this.pictureBox4.Location = new System.Drawing.Point(644, 762);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(87, 88);
+            this.pictureBox4.Size = new System.Drawing.Size(65, 72);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 25;
             this.pictureBox4.TabStop = false;
@@ -1058,9 +1156,11 @@
             this.groupBox12.Controls.Add(this.RecSpeedTextBox);
             this.groupBox12.Controls.Add(this.label14);
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox12.Location = new System.Drawing.Point(655, 433);
+            this.groupBox12.Location = new System.Drawing.Point(491, 352);
+            this.groupBox12.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(291, 390);
+            this.groupBox12.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox12.Size = new System.Drawing.Size(218, 264);
             this.groupBox12.TabIndex = 24;
             this.groupBox12.TabStop = false;
             // 
@@ -1069,18 +1169,20 @@
             this.RezTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RezTextBox.Enabled = false;
-            this.RezTextBox.Location = new System.Drawing.Point(12, 314);
+            this.RezTextBox.Location = new System.Drawing.Point(9, 202);
+            this.RezTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RezTextBox.Name = "RezTextBox";
-            this.RezTextBox.Size = new System.Drawing.Size(250, 38);
+            this.RezTextBox.Size = new System.Drawing.Size(188, 32);
             this.RezTextBox.TabIndex = 3;
             // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(61, 245);
+            this.label13.Location = new System.Drawing.Point(46, 146);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(150, 32);
+            this.label13.Size = new System.Drawing.Size(118, 26);
             this.label13.TabIndex = 2;
             this.label13.Text = "Результат";
             // 
@@ -1089,18 +1191,20 @@
             this.RecSpeedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RecSpeedTextBox.Enabled = false;
-            this.RecSpeedTextBox.Location = new System.Drawing.Point(11, 99);
+            this.RecSpeedTextBox.Location = new System.Drawing.Point(8, 80);
+            this.RecSpeedTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.RecSpeedTextBox.Name = "RecSpeedTextBox";
-            this.RecSpeedTextBox.Size = new System.Drawing.Size(250, 38);
+            this.RecSpeedTextBox.Size = new System.Drawing.Size(188, 32);
             this.RecSpeedTextBox.TabIndex = 1;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(6, 18);
+            this.label14.Location = new System.Drawing.Point(4, 15);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(257, 64);
+            this.label14.Size = new System.Drawing.Size(199, 52);
             this.label14.TabIndex = 0;
             this.label14.Text = "Рекомендованная\r\nскорость";
             // 
@@ -1111,9 +1215,11 @@
             this.groupBox13.Controls.Add(this.PointComboBox);
             this.groupBox13.Controls.Add(this.label15);
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox13.Location = new System.Drawing.Point(52, 613);
+            this.groupBox13.Location = new System.Drawing.Point(39, 472);
+            this.groupBox13.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(363, 76);
+            this.groupBox13.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox13.Size = new System.Drawing.Size(272, 62);
             this.groupBox13.TabIndex = 22;
             this.groupBox13.TabStop = false;
             // 
@@ -3223,11 +3329,12 @@
             "2098",
             "2099",
             "2100"});
-            this.PointComboBox.Location = new System.Drawing.Point(196, 23);
+            this.PointComboBox.Location = new System.Drawing.Point(147, 19);
+            this.PointComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.PointComboBox.MaxLength = 4;
             this.PointComboBox.Name = "PointComboBox";
             this.PointComboBox.RoundingEnable = false;
-            this.PointComboBox.Size = new System.Drawing.Size(161, 39);
+            this.PointComboBox.Size = new System.Drawing.Size(122, 34);
             this.PointComboBox.TabIndex = 1;
             this.PointComboBox.TextHover = null;
             this.PointComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
@@ -3239,9 +3346,10 @@
             this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 26);
+            this.label15.Location = new System.Drawing.Point(4, 21);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(81, 32);
+            this.label15.Size = new System.Drawing.Size(64, 26);
             this.label15.TabIndex = 0;
             this.label15.Text = "Очки";
             // 
@@ -3253,9 +3361,11 @@
             this.groupBox14.Controls.Add(this.label16);
             this.groupBox14.Controls.Add(this.DistanceComboBox);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox14.Location = new System.Drawing.Point(52, 252);
+            this.groupBox14.Location = new System.Drawing.Point(39, 205);
+            this.groupBox14.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(894, 80);
+            this.groupBox14.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox14.Size = new System.Drawing.Size(670, 65);
             this.groupBox14.TabIndex = 21;
             this.groupBox14.TabStop = false;
             // 
@@ -3264,9 +3374,10 @@
             this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(7, 22);
+            this.label16.Location = new System.Drawing.Point(5, 18);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(158, 32);
+            this.label16.Size = new System.Drawing.Size(123, 26);
             this.label16.TabIndex = 1;
             this.label16.Text = "Дистанция";
             // 
@@ -3287,10 +3398,11 @@
             "30 км",
             "50 км",
             "70 км"});
-            this.DistanceComboBox.Location = new System.Drawing.Point(656, 22);
+            this.DistanceComboBox.Location = new System.Drawing.Point(492, 18);
+            this.DistanceComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.DistanceComboBox.Name = "DistanceComboBox";
             this.DistanceComboBox.RoundingEnable = false;
-            this.DistanceComboBox.Size = new System.Drawing.Size(202, 39);
+            this.DistanceComboBox.Size = new System.Drawing.Size(152, 34);
             this.DistanceComboBox.TabIndex = 0;
             this.DistanceComboBox.TextHover = null;
             this.DistanceComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
@@ -3304,9 +3416,11 @@
             this.groupBox15.Controls.Add(this.label17);
             this.groupBox15.Controls.Add(this.StyleComboBox);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox15.Location = new System.Drawing.Point(52, 151);
+            this.groupBox15.Location = new System.Drawing.Point(39, 123);
+            this.groupBox15.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(894, 80);
+            this.groupBox15.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox15.Size = new System.Drawing.Size(670, 65);
             this.groupBox15.TabIndex = 20;
             this.groupBox15.TabStop = false;
             // 
@@ -3315,9 +3429,10 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(7, 22);
+            this.label17.Location = new System.Drawing.Point(5, 18);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(94, 32);
+            this.label17.Size = new System.Drawing.Size(75, 26);
             this.label17.TabIndex = 1;
             this.label17.Text = "Стиль";
             // 
@@ -3329,10 +3444,11 @@
             this.StyleComboBox.Items.AddRange(new object[] {
             "Свободный",
             "Классический"});
-            this.StyleComboBox.Location = new System.Drawing.Point(656, 22);
+            this.StyleComboBox.Location = new System.Drawing.Point(492, 18);
+            this.StyleComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.StyleComboBox.Name = "StyleComboBox";
             this.StyleComboBox.RoundingEnable = true;
-            this.StyleComboBox.Size = new System.Drawing.Size(202, 39);
+            this.StyleComboBox.Size = new System.Drawing.Size(152, 34);
             this.StyleComboBox.TabIndex = 0;
             this.StyleComboBox.TextHover = null;
             this.StyleComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
@@ -3346,9 +3462,11 @@
             this.groupBox16.Controls.Add(this.label18);
             this.groupBox16.Controls.Add(this.GenderComboBox);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox16.Location = new System.Drawing.Point(52, 51);
+            this.groupBox16.Location = new System.Drawing.Point(39, 41);
+            this.groupBox16.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(894, 80);
+            this.groupBox16.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox16.Size = new System.Drawing.Size(670, 65);
             this.groupBox16.TabIndex = 19;
             this.groupBox16.TabStop = false;
             // 
@@ -3357,9 +3475,10 @@
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(7, 22);
+            this.label18.Location = new System.Drawing.Point(5, 18);
+            this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 32);
+            this.label18.Size = new System.Drawing.Size(53, 26);
             this.label18.TabIndex = 1;
             this.label18.Text = "Пол";
             // 
@@ -3371,10 +3490,11 @@
             this.GenderComboBox.Items.AddRange(new object[] {
             "Мужской",
             "Женский"});
-            this.GenderComboBox.Location = new System.Drawing.Point(656, 22);
+            this.GenderComboBox.Location = new System.Drawing.Point(492, 18);
+            this.GenderComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.GenderComboBox.Name = "GenderComboBox";
             this.GenderComboBox.RoundingEnable = false;
-            this.GenderComboBox.Size = new System.Drawing.Size(202, 39);
+            this.GenderComboBox.Size = new System.Drawing.Size(152, 34);
             this.GenderComboBox.TabIndex = 0;
             this.GenderComboBox.TextHover = null;
             this.GenderComboBox.SelectionChangeCommitted += new System.EventHandler(this.GenderComboBox_SelectionChangeCommitted);
@@ -3386,11 +3506,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CalcPointButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(160)))), ((int)(((byte)(194)))));
             this.CalcPointButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CalcPointButton.Location = new System.Drawing.Point(343, 954);
+            this.CalcPointButton.Location = new System.Drawing.Point(257, 722);
+            this.CalcPointButton.Margin = new System.Windows.Forms.Padding(2);
             this.CalcPointButton.Name = "CalcPointButton";
             this.CalcPointButton.Rounding = 35;
             this.CalcPointButton.RoundingEnable = true;
-            this.CalcPointButton.Size = new System.Drawing.Size(365, 81);
+            this.CalcPointButton.Size = new System.Drawing.Size(274, 66);
             this.CalcPointButton.TabIndex = 23;
             this.CalcPointButton.Text = "Рассчитать";
             this.CalcPointButton.TextHover = null;
@@ -3402,39 +3523,41 @@
             this.pictureBox3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox3.Image = global::RguApp_Desktop.Properties.Resources.bg;
-            this.pictureBox3.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1058, 1092);
+            this.pictureBox3.Size = new System.Drawing.Size(792, 830);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox6
+            // pictureBox8
             // 
-            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = global::RguApp_Desktop.Properties.Resources.free_icon_home_1946488__1_;
-            this.pictureBox6.Location = new System.Drawing.Point(973, 1026);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(87, 88);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 1;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pictureBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Image = global::RguApp_Desktop.Properties.Resources.free_icon_home_1946488__1_;
+            this.pictureBox8.Location = new System.Drawing.Point(724, 762);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(65, 72);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 28;
+            this.pictureBox8.TabStop = false;
             // 
             // PoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1072, 1126);
-            this.Controls.Add(this.pictureBox6);
+            this.ClientSize = new System.Drawing.Size(804, 862);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PoForm";
             this.Text = "PoForm";
             this.tabControl1.ResumeLayout(false);
             this.MainPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -3443,6 +3566,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.RezPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
@@ -3474,7 +3598,7 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3547,5 +3671,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

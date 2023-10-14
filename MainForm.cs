@@ -37,7 +37,7 @@ namespace RguApp_Desktop
             DataBase.transition = 0;
             //GetRadio();
             newForm2.Owner = this;
-            newForm2.ShowDialog();
+            newForm2.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace RguApp_Desktop
             //DataBase.gender = 1;
             //DataBase.style = 1;
             DataBase.transition = 1;
-            newForm2.ShowDialog();
+            newForm2.Show();
         }
     }
 }

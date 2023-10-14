@@ -56,8 +56,12 @@ namespace RguApp_Desktop
         //RezButton
         private void c_ComBox3_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if(markerRez == true)
+            if(markerRez == true) {
+                textBox1.Text = "";
+                textBox2.Text = "";
                 RezBut();
+            }
+            
         }
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -84,6 +88,11 @@ namespace RguApp_Desktop
         {
             if (markerPoint == true)
                 PointBut();
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void c_ComBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -163,7 +172,7 @@ namespace RguApp_Desktop
 
                 if (speed >= 0)
                 {
-                    RecSpeedTextBox.Text = Math.Round(speed, 2) + " М/С";
+                    RecSpeedTextBox.Text = Math.Round(speed, 2) + " м/с";
                     RezTextBox.Text = timeToString(time);
                 }
                 else
@@ -241,7 +250,7 @@ namespace RguApp_Desktop
             {
                 if (speed <= 9)
                 {
-                    textBox1.Text = Math.Round(speed, 2) + " М/С";
+                    textBox1.Text = Math.Round(speed, 2) + " м/c";
                     textBox2.Text = Convert.ToString(point);
                 }
                 else
@@ -257,6 +266,8 @@ namespace RguApp_Desktop
         }
         private void CalcRezButton_Click(object sender, EventArgs e)
         {
+            textBox1.Text = "";
+            textBox2.Text = "";
             RezBut();
             markerRez = true;
         }

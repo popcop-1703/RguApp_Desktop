@@ -148,12 +148,6 @@
     </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Design.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,17 +166,8 @@
     <Compile Include="PoForm.Designer.cs">
       <DependentUpon>PoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PointForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PointForm.Designer.cs">
-      <DependentUpon>PointForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,9 +176,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PoForm.resx">
       <DependentUpon>PoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PointForm.resx">
-      <DependentUpon>PointForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
